@@ -145,14 +145,37 @@ $koneksi->close();
                             </div>  
                             <div class="mb-3">  
                                 <label for="biaya" class="form-label">Biaya</label>  
-                                <input type="number" step="0.01" name="biaya" id="biaya" class="form-control" placeholder="Biaya" required>  
-                            </div>  
+                                <input type="number" step="1000" name="biaya" id="biaya" class="form-control" value="8000" required readonly>  
+                                <div class="mt-2">  
+                                    <button type="button" class="btn btn-secondary" id="decrease">- 1,000</button>  
+                                    <button type="button" class="btn btn-secondary" id="increase">+ 1,000</button>  
+                                </div>  
+                                <small class="form-text text-muted">*Lakukan tawaran harga di sini</small>
+                            </div>   
                             <div class="mb-3">  
                                 <label for="catatan" class="form-label">Catatan</label>  
                                 <textarea name="catatan" id="catatan" class="form-control" placeholder="Catatan (opsional)"></textarea>  
                             </div>  
                             <button type="submit" class="btn btn-primary w-100">Pesan</button>  
                         </form>  
+                        <script>  
+    const biayaInput = document.getElementById('biaya');  
+    const increaseButton = document.getElementById('increase');  
+    const decreaseButton = document.getElementById('decrease');  
+  
+    increaseButton.addEventListener('click', function() {  
+        let currentValue = parseInt(biayaInput.value);  
+        biayaInput.value = currentValue + 1000;  
+    });  
+  
+    decreaseButton.addEventListener('click', function() {  
+        let currentValue = parseInt(biayaInput.value);  
+        if (currentValue > 8000) { // Prevent going below the initial price  
+            biayaInput.value = currentValue - 1000;  
+        }  
+    });  
+</script>  
+
                     </div>  
                 </div>  
             </div>  
