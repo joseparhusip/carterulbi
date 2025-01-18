@@ -39,7 +39,7 @@ if (!isset($_SESSION['username'])) {
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<b
 
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
@@ -125,6 +125,8 @@ if (!isset($_SESSION['username'])) {
         }
         ?>
     </section>
+
+    </br>
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
