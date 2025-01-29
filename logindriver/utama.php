@@ -63,8 +63,12 @@ if (!isset($_SESSION['id_driver'])) {
                         <li>
                             <a href="utama.php?page=pesanan_makanan">Makanan</a>
                         </li>
+                        <li>
+                            <a href="utama.php?page=detail_pesanan">Detail Pesanan</a>
+                        </li>
                     </ul>
                 </li>
+
 
                 <!-- Pembayaran Menu Item -->
                 <li class="menu-item has-submenu">
@@ -171,21 +175,19 @@ if (!isset($_SESSION['id_driver'])) {
                 } elseif ($_GET['page'] == 'dashboard') {
                     include "dashboard.php";
                 } elseif ($_GET['page'] == 'profile') {
-                    include "profile.php";                
+                    include "profile.php";
                 } elseif ($_GET['page'] == 'editprofile') {
                     include "editprofile.php";
                 } elseif ($_GET['page'] == 'pesanan_makanan') {
                     include "pesanan_makanan.php";
-                } elseif ($_GET['page'] == 'update_status_pemesanan') {
-                    include "update_status_pemesanan.php";
                 } elseif ($_GET['page'] == 'pengantaran_orang') {
                     include "pengantaran_orang.php";
-                } elseif ($_GET['page'] == 'update_status_pengantaran') {
-                    include "update_status_pengantaran.php";
+                } elseif ($_GET['page'] == 'detail_pesanan') {
+                    include "detail_pesanan.php";
                 } elseif ($_GET['page'] == 'pembayaran') {
                     include "pembayaran.php";
                 } elseif ($_GET['page'] == 'ulasan') {
-                    include "ulasan.php";              
+                    include "ulasan.php";
                 } else {
                     include "index.php"; // Jika page tidak ditemukan, tampilkan index.php
                 }
