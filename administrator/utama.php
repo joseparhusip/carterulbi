@@ -91,20 +91,23 @@ if ($stmt) {
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
-                <li class="menu-item has-submenu">
-                    <a class="menu-link" href="#">
-                        <i class="icon material-icons md-shopping_bag"></i>
-                        <span class="text">Produk</span>
-                    </a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="utama.php?page=kategori">Kategori Produk</a>
-                        </li>
-                        <li>
-                            <a href="utama.php?page=produk">Produk Makanan</a>
-                        </li>
-                    </ul>
-                </li>
+            <li class="menu-item has-submenu">
+                <a class="menu-link" href="#">
+                    <i class="icon material-icons md-shopping_bag"></i>
+                    <span class="text">Produk</span>
+                </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="utama.php?page=kategori">Kategori Produk</a>
+                    </li>
+                    <li>
+                        <a href="utama.php?page=produk">Produk Makanan</a>
+                    </li>
+                    <li>
+                        <a href="utama.php?page=product_images">Product Images</a>
+                    </li>
+                </ul>
+            </li>
                 
                 <li class="menu-item has-submenu">
                     <a class="menu-link" href="#">
@@ -256,7 +259,15 @@ if ($stmt) {
                 }  elseif ($_GET['page'] == 'pembayaran_makanan') {
                     include "pembayaran_makanan.php";   
                 }  elseif ($_GET['page'] == 'pembayaran_orang') {
-                    include "pembayaran_orang.php";                       
+                    include "pembayaran_orang.php"; 
+                }  elseif ($_GET['page'] == 'product_images') {
+                    include "product_images.php";        
+                }  elseif ($_GET['page'] == 'tambahprodukimage') {
+                    include "tambahprodukimage.php";   
+                }  elseif ($_GET['page'] == 'editprodukimages') {
+                    include "editprodukimages.php";   
+                }  elseif ($_GET['page'] == 'hapus_product_images') {
+                    include "hapus_product_images.php"; 
                 } else {
                     include "index.php"; // Jika page tidak ditemukan, tampilkan index.php
                 }

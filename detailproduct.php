@@ -1,23 +1,34 @@
 <?php                    
-include 'config.php'; // Import database connection configuration              
+include 'config.php';              
   
 if (!isset($_SESSION['username'])) {                  
-    header('Location: login.php'); // Redirect to login page if not logged in                      
+    header('Location: login.php');                     
     exit();                  
 }                  
   
-// Get product ID from URL              
 $id_produk = isset($_GET['id_produk']) ? intval($_GET['id_produk']) : 0;                  
-  
-// Fetch product details from the database              
-$sql = "SELECT nama_produk, stok, harga, deskripsi, status, gambar FROM produk_makanan WHERE id_produk = $id_produk";                  
+
+// Modified query to fetch multiple images
+$sql = "SELECT p.nama_produk, p.stok, p.harga, p.deskripsi, p.status, p.gambar,
+        GROUP_CONCAT(pi.image_path) as additional_images 
+        FROM produk_makanan p 
+        LEFT JOIN product_images pi ON p.id_produk = pi.product_id 
+        WHERE p.id_produk = $id_produk 
+        GROUP BY p.id_produk";                  
 $result = $koneksi->query($sql);                  
 $product = $result->fetch_assoc();                  
   
 if (!$product) {                  
     echo "<p>Produk tidak ditemukan.</p>";                  
     exit();                  
-}                  
+}
+
+// Create array of all images
+$images = [$product['gambar']];
+if (!empty($product['additional_images'])) {
+    $additional_images = explode(',', $product['additional_images']);
+    $images = array_merge($images, $additional_images);
+}
 ?>                  
   
 <!DOCTYPE html>                  
@@ -139,12 +150,96 @@ if (!$product) {
             border-radius: 5px;
             display: none;
         }
+
+        /* Slider styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #001f3f;
+            flex-shrink: 0;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .slider-nav button {
+            background-color: rgba(0, 31, 63, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .slider-nav button:hover {
+            background-color: rgba(0, 31, 63, 0.9);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            gap: 5px;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background-color: #001f3f;
+        }
     </style>                  
 </head>                  
 <body>                  
     <div class="product-card">                  
-        <form action="add_to_cart.php" method="POST">          
-            <img src="gambarfood/<?php echo $product['gambar']; ?>" alt="<?php echo $product['nama_produk']; ?>">                  
+        <form action="add_to_cart.php" method="POST">
+            <!-- Replace single image with slider -->
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <?php foreach ($images as $image): ?>
+                    <img src="gambarfood/<?php echo $image; ?>" alt="<?php echo $product['nama_produk']; ?>">
+                    <?php endforeach; ?>
+                </div>
+                <div class="slider-nav">
+                    <button type="button" class="slider-prev">&lt;</button>
+                    <button type="button" class="slider-next">&gt;</button>
+                </div>
+                <div class="slider-dots">
+                    <?php for($i = 0; $i < count($images); $i++): ?>
+                    <span class="slider-dot <?php echo $i === 0 ? 'active' : ''; ?>" data-index="<?php echo $i; ?>"></span>
+                    <?php endfor; ?>
+                </div>
+            </div>
+
             <h2 class="product-name"><?php echo $product['nama_produk']; ?></h2>                  
             <p><strong>Stok:</strong> <?php echo $product['stok']; ?></p>                  
             <p><strong>Harga:</strong> Rp<?php echo number_format($product['harga'], 0, ',', '.'); ?></p>                  
@@ -180,7 +275,6 @@ if (!$product) {
             var currentQuantity = parseInt(quantityInput.value);                  
             var newQuantity = currentQuantity + amount;                  
               
-            // Ensure quantity does not exceed stock                      
             if (newQuantity < 1) {                  
                 newQuantity = 1;                  
             } else if (newQuantity > parseInt(quantityInput.max)) {                  
@@ -196,7 +290,54 @@ if (!$product) {
             var harga = parseFloat(document.querySelector('input[name="harga"]').value);        
             var totalHarga = quantityInput.value * harga;        
             document.getElementById('total_harga').value = totalHarga;        
-        }        
+        }
+
+        // Slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliderWrapper = document.querySelector('.slider-wrapper');
+            const slides = sliderWrapper.querySelectorAll('img');
+            const prevButton = document.querySelector('.slider-prev');
+            const nextButton = document.querySelector('.slider-next');
+            const dots = document.querySelectorAll('.slider-dot');
+            let currentIndex = 0;
+
+            // Update slider position
+            function updateSlider() {
+                const offset = -currentIndex * 100;
+                sliderWrapper.style.transform = `translateX(${offset}%)`;
+                
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            // Previous slide
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            });
+
+            // Next slide
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            });
+
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateSlider();
+                });
+            });
+
+            // Auto-advance slides
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            }, 5000);
+        });
     </script>                  
 </body>                  
 </html>
