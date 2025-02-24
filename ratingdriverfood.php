@@ -10,8 +10,8 @@ if (!isset($_SESSION['username'])) {
 }    
     
 // Ambil id_pesanan dari URL    
-$id_pesanan = isset($_GET['id_pesanan']) ? intval($_GET['id_pesanan']) : 0; // Ensure id_pesanan is an integer  
-    
+$id_pesanan = isset($_GET['id_pesanan']) ? intval($_GET['id_pesanan']) : 0;
+
 // Ambil data driver, nama produk, dan total harga berdasarkan id_pesanan    
 $query = "SELECT d.gambardriver, d.nama, d.plat_nomor, d.kendaraan, pm.total_harga, pm.id_produk, pr.nama_produk AS nama_produk    
           FROM pesanan_makanan pm    
@@ -20,13 +20,16 @@ $query = "SELECT d.gambardriver, d.nama, d.plat_nomor, d.kendaraan, pm.total_har
           WHERE pm.id_pesanan = ?";    
 $stmt = $koneksi->prepare($query);    
 $stmt->bind_param('i', $id_pesanan);    
-$stmt->execute();    
-$result = $stmt->get_result();    
-$data = $result->fetch_assoc();    
-if (!$data) {    
+$stmt->execute();
+$stmt->bind_result($gambardriver, $nama, $plat_nomor, $kendaraan, $total_harga, $id_produk, $nama_produk);
+$stmt->fetch();
+$stmt->close();
+
+// Validasi data
+if (empty($nama)) {    
     echo "<script>alert('Data pengantaran tidak ditemukan.'); window.location = 'utama.php';</script>";    
     exit;    
-}    
+}
 ?>    
     
 <!DOCTYPE html>    
@@ -113,13 +116,13 @@ if (!$data) {
 <div class="rating-container">    
     <h1>Rating Driver</h1>    
     <div class="driver-info">    
-        <img src="gambardriver/<?php echo htmlspecialchars($data['gambardriver']); ?>" alt="Gambar Driver">    
+        <img src="gambardriver/<?php echo htmlspecialchars($gambardriver); ?>" alt="Gambar Driver">    
         <div class="driver-details">    
-            <p><strong>Nama Driver:</strong> <?php echo htmlspecialchars($data['nama']); ?></p>    
-            <p><strong>Plat Nomor:</strong> <?php echo htmlspecialchars($data['plat_nomor']); ?></p>    
-            <p><strong>Kendaraan:</strong> <?php echo htmlspecialchars($data['kendaraan']); ?></p>    
-            <p><strong>Nama Produk:</strong> <?php echo htmlspecialchars($data['nama_produk']); ?></p>    
-            <p><strong>Total Harga:</strong> Rp <?php echo number_format($data['total_harga'], 0, ',', '.'); ?></p>    
+            <p><strong>Nama Driver:</strong> <?php echo htmlspecialchars($nama); ?></p>    
+            <p><strong>Plat Nomor:</strong> <?php echo htmlspecialchars($plat_nomor); ?></p>    
+            <p><strong>Kendaraan:</strong> <?php echo htmlspecialchars($kendaraan); ?></p>    
+            <p><strong>Nama Produk:</strong> <?php echo htmlspecialchars($nama_produk); ?></p>    
+            <p><strong>Total Harga:</strong> Rp <?php echo number_format($total_harga, 0, ',', '.'); ?></p>    
         </div>    
     </div>    
     <form method="POST" action="">    
@@ -159,17 +162,18 @@ if (!$data) {
     
 <?php    
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {    
-    $rating = isset($_POST['rating']) ? intval($_POST['rating']) : 0; // Ensure rating is an integer  
+    $rating = isset($_POST['rating']) ? intval($_POST['rating']) : 0;
     
-    if ($rating > 0 && $rating <= 5) { // Validate rating value  
-        $query = "UPDATE pesanan_makanan SET rating = ? WHERE id_pesanan = ?";    
-        $stmt = $koneksi->prepare($query);    
+    if ($rating > 0 && $rating <= 5) {
+        $update_query = "UPDATE pesanan_makanan SET rating = ? WHERE id_pesanan = ?";    
+        $stmt = $koneksi->prepare($update_query);    
         $stmt->bind_param('ii', $rating, $id_pesanan);    
         if ($stmt->execute()) {    
             echo "<script>alert('Rating berhasil diberikan.'); window.location = 'utama.php?page=detailpesananmakanan&id_pesanan=$id_pesanan';</script>";    
         } else {    
             echo "<script>alert('Gagal memberikan rating.');</script>";    
-        }    
+        }
+        $stmt->close();
     } else {    
         echo "<script>alert('Silakan pilih rating antara 1 hingga 5.');</script>";    
     }    
@@ -177,4 +181,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>    
     
 </body>    
-</html>  
+</html>

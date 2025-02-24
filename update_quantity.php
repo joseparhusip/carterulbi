@@ -15,8 +15,9 @@ $query_user = "SELECT id_user FROM user WHERE username = ?";
 $stmt_user = $koneksi->prepare($query_user);
 $stmt_user->bind_param('s', $username);
 $stmt_user->execute();
-$result_user = $stmt_user->get_result();
-$user = $result_user->fetch_assoc();
+$stmt_user->bind_result($id_user);
+$stmt_user->fetch();
+$stmt_user->close();
 
 // Periksa jika ada perubahan quantity
 if (isset($_POST['quantity'])) {
@@ -25,12 +26,10 @@ if (isset($_POST['quantity'])) {
             // Update quantity di tabel keranjang
             $query_update = "UPDATE keranjang SET quantity = ? WHERE id_user = ? AND id_produk = ?";
             $stmt_update = $koneksi->prepare($query_update);
-            $stmt_update->bind_param('iii', $quantity, $user['id_user'], $id_produk);
-
+            $stmt_update->bind_param('iii', $quantity, $id_user, $id_produk);
             if (!$stmt_update->execute()) {
                 echo "Terjadi kesalahan: " . $stmt_update->error;
             }
-
             $stmt_update->close();
         }
     }

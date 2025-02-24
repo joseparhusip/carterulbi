@@ -1,16 +1,18 @@
 <?php
-session_start(); // Harus dipanggil sebelum ada output apa pun
+session_start();
 include "config.php";
 
 if (!isset($_SESSION['username'])) {
     header('location:login.php');
     exit();
 }
+
+// Get current page from URL
+$current_page = isset($_GET['page']) ? $_GET['page'] : 'index';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>CARTER ULBI</title>
@@ -31,15 +33,52 @@ if (!isset($_SESSION['username'])) {
     <link href="./CarterULBI/lib/animate/animate.min.css" rel="stylesheet">
     <link href="./CarterULBI/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="./CarterULBI/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="./CarterULBI/css/style.css" rel="stylesheet">
+
+    <!-- Custom CSS for active navigation -->
+    <style>
+        .nav-item .nav-link.active {
+            color: #ff0000 !important;
+        }
+        /* Add styles for profile dropdown */
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-dropdown .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 8px 0;
+        }
+        .profile-dropdown:hover .dropdown {
+            display: block;
+        }
+        .profile-dropdown .dropdown li {
+            list-style: none;
+        }
+        .profile-dropdown .dropdown li a {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .profile-dropdown .dropdown li a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 
-
+<body>
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
         <div class="container">
@@ -52,14 +91,15 @@ if (!isset($_SESSION['username'])) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
-                        <a href="index.php" class="nav-item nav-link active">Home</a>
-                        <a href="utama.php?page=service" class="nav-item nav-link">Service</a>
-                        <a href="utama.php?page=productfood" class="nav-item nav-link">Food</a>
-                        <a href="utama.php?page=about" class="nav-item nav-link">About</a>
-                        <a href="utama.php?page=contact" class="nav-item nav-link">Contact</a>
+                        <a href="index.php" class="nav-item nav-link <?php echo ($current_page == 'index' || $current_page == '') ? 'active' : ''; ?>">Home</a>
+                        <a href="utama.php?page=service" class="nav-item nav-link <?php echo ($current_page == 'service') ? 'active' : ''; ?>">Service</a>
+                        <a href="utama.php?page=productfood" class="nav-item nav-link <?php echo ($current_page == 'productfood') ? 'active' : ''; ?>">Food</a>
+                        <a href="utama.php?page=about" class="nav-item nav-link <?php echo ($current_page == 'about') ? 'active' : ''; ?>">About</a>
+                        <a href="utama.php?page=contact" class="nav-item nav-link <?php echo ($current_page == 'contact') ? 'active' : ''; ?>">Contact</a>
                         <!-- Dropdown for Order -->
                         <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle <?php echo (in_array($current_page, ['detailpengantaranorang', 'detailpesananmakanan'])) ? 'active' : ''; ?>" 
+                               href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Order
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -70,34 +110,34 @@ if (!isset($_SESSION['username'])) {
                     </div>
                     <div class="col-lg-3 col-md-3">
                         <div class="header__nav__option">
-                        <a href="utama.php?page=keranjang">
-                                    <img src="./CarterULBI/logo/cart.jpg" alt="Cart" style="width: 40px; height: 40px;">
-                                </a>
+                            <a href="utama.php?page=keranjang">
+                                <img src="./CarterULBI/logo/cart.jpg" alt="Cart" style="width: 40px; height: 40px;">
+                            </a>
+                            <!-- Updated Profile dropdown menu -->
                             <div class="profile-dropdown">
-                                <a href="utama.php?page=profile&id_user=">
+                                <a href="#">
                                     <img src="./CarterULBI/logo/profile.png" alt="Profile" style="width: 40px; height: 40px;">
                                 </a>
                                 <ul class="dropdown">
-                                    <?php if (isset($_SESSION['email'])): ?>
-                                        <!-- Menu untuk pengguna yang sudah login -->
+                                    <?php if (isset($_SESSION['username'])): ?>
                                         <li><a href="utama.php?page=profile">Profile</a></li>
-                                        <li><a href="utama.php?page=orderlist">Order History</a></li>
-                                        <li><a href="utama.php?page=faq">FAQ</a></li>
+                                        <li><a href="logout.php">Log Out</a></li>
                                     <?php else: ?>
-                                        <!-- Menu untuk pengguna yang belum login -->
                                         <li><a href="login.php">Log In</a></li>
                                         <li><a href="signup.php">Register</a></li>
-                                        <li><a href="logout.php">Log Out</a></li>
                                     <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                </div>
             </nav>
         </div>
     </div>
+    <!-- Rest of your existing code remains the same -->
     <!-- Navbar & Hero End -->
 
+    <!-- Dynamic Content Section -->
     <section>
         <?php
         if (isset($_GET['page'])) {
@@ -129,10 +169,12 @@ if (!isset($_SESSION['username'])) {
                 include "detailpesananmakanan.php";       
             } elseif ($_GET['page'] == 'formpemesananfood') {
                 include "formpemesananfood.php";  
-            }  elseif ($_GET['page'] == 'ratingdriver') {
+            } elseif ($_GET['page'] == 'ratingdriver') {
                 include "ratingdriver.php";  
-            }  elseif ($_GET['page'] == 'ratingdriverfood') {
+            } elseif ($_GET['page'] == 'ratingdriverfood') {
                 include "ratingdriverfood.php"; 
+            } elseif ($_GET['page'] == 'dashboard') {
+                include "dashboard.php"; 
             } else {
                 echo "<p>Halaman tidak ditemukan.</p>";
             }
@@ -142,7 +184,7 @@ if (!isset($_SESSION['username'])) {
         ?>
     </section>
 
-    </br>
+    <br>
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -200,10 +242,14 @@ if (!isset($_SESSION['username'])) {
     </div>
     <!-- Copyright End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+    <!--Start of Tawk.to Script-->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="irnllxmO_Mi0nLrG9euqC";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    <!--End of Tawk.to Script-->
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -213,7 +259,6 @@ if (!isset($_SESSION['username'])) {
     <script src="./CarterULBI/lib/waypoints/waypoints.min.js"></script>
     <script src="./CarterULBI/lib/counterup/counterup.min.js"></script>
     <script src="./CarterULBI/lib/owlcarousel/owl.carousel.min.js"></script>
-
 
     <!-- Template Javascript -->
     <script src="./CarterULBI/js/main.js"></script>

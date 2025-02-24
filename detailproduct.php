@@ -26,7 +26,7 @@ if (!$product) {
     <meta charset="UTF-8">                  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">                  
     <title>Detail Produk - <?php echo $product['nama_produk']; ?></title>                  
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->            
+    <link rel="stylesheet" href="styles.css">           
     <style>                  
         body {                  
             font-family: 'Arial', sans-serif;                  
@@ -45,7 +45,7 @@ if (!$product) {
             background-color: #fff;                  
             padding: 20px;                  
             border-radius: 10px;                  
-            border: 1px solid #000; /* Border tipis hitam */            
+            border: 1px solid #000;            
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);                  
         }                  
               
@@ -55,15 +55,15 @@ if (!$product) {
             height: auto;                  
             border-radius: 10px;                  
             margin-bottom: 15px;                  
-            border: 2px solid #001f3f; /* Border pada gambar */            
-            display: block; /* Center the image */                  
-            margin-left: auto; /* Center the image */                  
-            margin-right: auto; /* Center the image */                  
+            border: 2px solid #001f3f;            
+            display: block;                  
+            margin-left: auto;                  
+            margin-right: auto;                  
         }                  
               
         .product-name {                  
             font-size: 2em;                  
-            color: #001f3f; /* Change to match the button color */                  
+            color: #001f3f;                  
             margin-bottom: 10px;                  
         }                  
               
@@ -81,14 +81,14 @@ if (!$product) {
         .quantity-controls {                  
             display: flex;                  
             align-items: center;                  
-            justify-content: center; /* Center the items horizontally */                  
+            justify-content: center;                  
             margin: 10px 0;                  
         }                  
               
         .quantity-controls button {                  
             padding: 10px;                  
             border: none;                  
-            background-color: #001f3f; /* Change to match the button color */                  
+            background-color: #001f3f;                  
             color: white;                  
             border-radius: 5px;                  
             cursor: pointer;                  
@@ -97,7 +97,7 @@ if (!$product) {
         }                  
               
         .quantity-controls button:hover {                  
-            background-color: #001a33; /* Darker color on hover */                  
+            background-color: #001a33;                  
         }                  
               
         .quantity-controls input {                  
@@ -109,7 +109,7 @@ if (!$product) {
         }                  
               
         .btn-buy {                  
-            background-color: #001f3f; /* Navy blue */            
+            background-color: #001f3f;            
             color: white;                  
             padding: 10px 15px;                  
             border: none;                  
@@ -121,13 +121,29 @@ if (!$product) {
         }                  
               
         .btn-buy:hover {                  
-            background-color: #001a33; /* Darker color on hover */            
-        }                  
+            background-color: #001a33;            
+        }     
+
+        .btn-buy:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .out-of-stock-label {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px 0;
+            padding: 5px 10px;
+            background-color: #ffe6e6;
+            border-radius: 5px;
+            display: none;
+        }
     </style>                  
 </head>                  
 <body>                  
     <div class="product-card">                  
-        <form action="add_to_cart.php" method="POST"> <!-- Form for adding to cart -->          
+        <form action="add_to_cart.php" method="POST">          
             <img src="gambarfood/<?php echo $product['gambar']; ?>" alt="<?php echo $product['nama_produk']; ?>">                  
             <h2 class="product-name"><?php echo $product['nama_produk']; ?></h2>                  
             <p><strong>Stok:</strong> <?php echo $product['stok']; ?></p>                  
@@ -135,20 +151,26 @@ if (!$product) {
             <p><strong>Deskripsi:</strong> <?php echo $product['deskripsi']; ?></p>                  
             <p><strong>Status:</strong> <?php echo $product['status']; ?></p>                  
               
-            <div class="quantity-controls">                  
+            <div class="quantity-controls" <?php echo ($product['stok'] == 0 ? 'style="display: none;"' : ''); ?>>                  
                 <button type="button" onclick="changeQuantity(-1)">-</button>                  
                 <input type="number" id="quantity" name="quantity" value="1" min="1" max="<?php echo $product['stok']; ?>" onchange="updateTotalPrice()">                  
                 <button type="button" onclick="changeQuantity(1)">+</button>                  
             </div>                  
               
+            <div class="out-of-stock-label" <?php echo ($product['stok'] == 0 ? 'style="display: block;"' : ''); ?>>
+                Out of Stock
+            </div>
+
             <input type="hidden" name="id_produk" value="<?php echo $id_produk; ?>">          
             <input type="hidden" name="harga" value="<?php echo $product['harga']; ?>">          
             <input type="hidden" name="gambar" value="<?php echo $product['gambar']; ?>">          
             <input type="hidden" name="nama_produk" value="<?php echo $product['nama_produk']; ?>">          
-            <input type="hidden" name="id_user" value="<?php echo $_SESSION['username']; ?>"> <!-- Assuming username is used as user ID -->          
-            <input type="hidden" name="total_harga" id="total_harga" value="<?php echo $product['harga']; ?>"> <!-- Hidden input for total price -->        
+            <input type="hidden" name="id_user" value="<?php echo $_SESSION['username']; ?>">          
+            <input type="hidden" name="total_harga" id="total_harga" value="<?php echo $product['harga']; ?>">        
               
-            <button type="submit" class="btn-buy">Beli</button>                  
+            <button type="submit" class="btn-buy" <?php echo ($product['stok'] == 0 ? 'disabled' : ''); ?>>
+                <?php echo ($product['stok'] == 0 ? 'Out of Stock' : 'Beli'); ?>
+            </button>                  
         </form>          
     </div>                  
               
@@ -166,15 +188,15 @@ if (!$product) {
             }                  
               
             quantityInput.value = newQuantity;                  
-            updateTotalPrice(); // Update total price when quantity changes        
+            updateTotalPrice();        
         }                  
         
         function updateTotalPrice() {        
             var quantityInput = document.getElementById('quantity');        
             var harga = parseFloat(document.querySelector('input[name="harga"]').value);        
             var totalHarga = quantityInput.value * harga;        
-            document.getElementById('total_harga').value = totalHarga; // Set the total price in the hidden input        
+            document.getElementById('total_harga').value = totalHarga;        
         }        
     </script>                  
 </body>                  
-</html>  
+</html>

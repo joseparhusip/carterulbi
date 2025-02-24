@@ -1,16 +1,4 @@
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Tentang CaBi</h4>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">About</li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
 
         <!-- About Start -->
         <div class="container-fluid overflow-hidden about py-5">
@@ -20,8 +8,7 @@
                         <div class="about-item">
                             <div class="pb-5">
                                 <h1 class="display-5 text-capitalize">Carter <span class="text-primary">ULBI</span></h1>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet nemo expedita asperiores commodi accusantium at cum harum, excepturi, quia tempora cupiditate! Adipisci facilis modi quisquam quia distinctio,
-                                </p>
+                                <p class="mb-0"> Carter UBI adalah layanan pengantaran orang dan makanan di lingkungan Universitas Logistik dan Bisnis Internasional yang dirancang untuk memberikan kemudahan, kenyamanan, dan efisiensi bagi mahasiswa. Selain itu, platform ini juga membuka peluang bagi mahasiswa untuk memperoleh keuntungan dengan memanfaatkan kendaraan mereka sebagai sarana transportasi dan pengantaran.</p>
                             </div>
                         </div>
                     </div>
@@ -79,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-lg-12 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <img src="./CarterULBI/img/features-img.png" class="img-fluid w-100" style="object-fit: cover;" alt="Img">
+                        <img src="./CarterULBI/img/motormerah.png" class="img-fluid w-100" style="object-fit: cover;" alt="Img">
                     </div>
                     <div class="col-xl-4">
                         <div class="row gy-4 gx-0">
@@ -148,21 +135,4 @@
 
     </br>
     </br>
-        <!-- Banner Start -->
-        <div class="container-fluid banner pb-5 wow zoomInDown" data-wow-delay="0.1s">
-            <div class="container pb-5">
-                <div class="banner-item rounded">
-                    <img src="./CarterULBI/img/banner-1.jpg" class="img-fluid rounded w-100" alt="">
-                    <div class="banner-content">
-                        <h2 class="text-primary">Rent Your Car</h2>
-                        <h1 class="text-white">Interested in Renting?</h1>
-                        <p class="text-white">Don't hesitate and send us a message.</p>
-                        <div class="banner-btn">
-                            <a href="#" class="btn btn-secondary rounded-pill py-3 px-4 px-md-5 me-2">WhatchApp</a>
-                            <a href="#" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 ms-2">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Banner End -->
+        

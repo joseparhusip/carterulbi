@@ -1,57 +1,1 @@
-<?php
-include "config.php";
-// Cek koneksi            
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
-}
-
-// Cek apakah user sudah login            
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit;
-}
-
-$username = $_SESSION['username'];
-
-// Query untuk mendapatkan data user berdasarkan username            
-$query_user = "SELECT id_user, nama FROM user WHERE username = ?";
-$stmt_user = $koneksi->prepare($query_user);
-$stmt_user->bind_param('s', $username);
-$stmt_user->execute();
-$result_user = $stmt_user->get_result();
-$user = $result_user->fetch_assoc();
-
-// Mendapatkan id_driver dari request atau default            
-$id_driver = isset($_POST['id_driver']) ? $_POST['id_driver'] : 1;
-
-// Mengambil data dari form
-$titik_antar = $_POST['titik_antar'];
-$titik_jemput = $_POST['titik_jemput'];
-$biaya = $_POST['biaya'];
-$catatan = isset($_POST['catatan']) ? $_POST['catatan'] : null;
-
-// Query untuk menyimpan data pemesanan ke tabel pengantaran_orang
-$query = "INSERT INTO pengantaran_orang (id_user, id_driver, titik_antar, titik_jemput, biaya, catatan) 
-          VALUES (?, ?, ?, ?, ?, ?)";
-
-// Persiapkan statement
-$stmt = $koneksi->prepare($query);
-
-// Bind parameter
-$stmt->bind_param("iissds", $user['id_user'], $id_driver, $titik_antar, $titik_jemput, $biaya, $catatan);
-
-// Eksekusi query
-if ($stmt->execute()) {
-    // Jika berhasil, tampilkan pesan dan arahkan kembali ke halaman utama
-    header("Location: utama.php?page=service"); // Redirect ke halaman service
-    exit;
-} else {
-    // Jika gagal, tampilkan pesan error
-    echo "Terjadi kesalahan: " . $stmt->error;
-}
-
-// Tutup statement dan koneksi
-$stmt->close();
-$koneksi->close();
-?>
+<?phpinclude "config.php";// Cek koneksi            if ($koneksi->connect_error) {    die("Koneksi gagal: " . $koneksi->connect_error);}// Cek apakah user sudah login            session_start();if (!isset($_SESSION['username'])) {    header("Location: login.php");    exit;}$username = $_SESSION['username'];// Query untuk mendapatkan data user berdasarkan username            $query_user = "SELECT id_user, nama FROM user WHERE username = ?";$stmt_user = $koneksi->prepare($query_user);$stmt_user->bind_param('s', $username);$stmt_user->execute();$stmt_user->bind_result($id_user, $nama_user);$stmt_user->fetch();$stmt_user->close();// Mendapatkan id_driver dari request atau default            $id_driver = isset($_POST['id_driver']) ? $_POST['id_driver'] : 1;// Ambil nomor WhatsApp driver$query_driver = "SELECT no_whatsapp FROM driver WHERE id_driver = ?";$stmt_driver = $koneksi->prepare($query_driver);$stmt_driver->bind_param('i', $id_driver);$stmt_driver->execute();$stmt_driver->bind_result($no_whatsapp);$stmt_driver->fetch();$stmt_driver->close();// Mengambil data dari form$titik_antar = $_POST['titik_antar'];$titik_jemput = $_POST['titik_jemput'];$biaya = $_POST['biaya'];$catatan = isset($_POST['catatan']) ? $_POST['catatan'] : null;// Query untuk menyimpan data pemesanan ke tabel pengantaran_orang$query = "INSERT INTO pengantaran_orang (id_user, id_driver, titik_antar, titik_jemput, biaya, catatan)           VALUES (?, ?, ?, ?, ?, ?)";// Persiapkan statement$stmt = $koneksi->prepare($query);// Bind parameter$stmt->bind_param("iissds", $id_user, $id_driver, $titik_antar, $titik_jemput, $biaya, $catatan);if ($stmt->execute()) {    // Format nomor WhatsApp (sama seperti sebelumnya)    $no_whatsapp = preg_replace('/[^0-9]/', '', $no_whatsapp);        if (substr($no_whatsapp, 0, 1) === '0') {        $no_whatsapp = '62' . substr($no_whatsapp, 1);    } elseif (substr($no_whatsapp, 0, 2) !== '62') {        $no_whatsapp = '62' . $no_whatsapp;    }        // Siapkan pesan WhatsApp (sama seperti sebelumnya)    $pesan = "🚗 *PESANAN BARU!*\n\n"           . "*Detail Pesanan:*\n"           . "Nama Penumpang: $nama_user\n"           . "Titik Jemput: $titik_jemput\n"           . "Titik Antar: $titik_antar\n"           . "Biaya: Rp " . number_format($biaya, 0, ',', '.') . "\n";        if ($catatan) {        $pesan .= "Catatan: $catatan\n";    }        $pesan_encoded = rawurlencode($pesan);    $wa_url = "https://wa.me/$no_whatsapp?text=$pesan_encoded";        // Tampilkan halaman sukses dengan tombol WhatsApp    ?>    <!DOCTYPE html>    <html>    <head>        <title>Pesanan Berhasil</title>        <style>            .success-container {                text-align: center;                padding: 20px;                margin: 20px auto;                max-width: 500px;            }            .whatsapp-button {                display: inline-block;                background-color: #25D366;                color: white;                padding: 10px 20px;                border-radius: 5px;                text-decoration: none;                margin: 10px;                font-weight: bold;            }            .continue-button {                display: inline-block;                background-color: #007bff;                color: white;                padding: 10px 20px;                border-radius: 5px;                text-decoration: none;                margin: 10px;            }        </style>    </head>    <body>        <div class="success-container">            <h2>✅ Pesanan Berhasil Dibuat!</h2>            <p>Silakan klik tombol di bawah untuk menghubungi driver melalui WhatsApp</p>            <a href="<?php echo $wa_url; ?>" class="whatsapp-button" target="_blank">                Hubungi Driver via WhatsApp            </a>            <br>            <a href="utama.php?page=detailpengantaranorang" class="continue-button">                Kembali ke Halaman Utama            </a>        </div>        <script>            // Redirect otomatis setelah 10 detik jika user tidak mengklik tombol            setTimeout(function() {                window.location.href = 'utama.php?page=detailpengantaranorang';            }, 10000);        </script>    </body>    </html>    <?php    exit;} else {    // Jika gagal, tampilkan pesan error    echo "Terjadi kesalahan: " . $stmt->error;}// Tutup statement dan koneksi$stmt->close();$koneksi->close();?>

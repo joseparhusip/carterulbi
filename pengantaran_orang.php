@@ -14,28 +14,24 @@ if (!isset($_SESSION['username'])) {
 $username = $_SESSION['username'];
 
 // Query untuk mendapatkan data user berdasarkan username              
-$query_user = "SELECT nama FROM user WHERE username = ?";
+$query_user = "SELECT nama, no_hp FROM user WHERE username = ?";
 $stmt_user = $koneksi->prepare($query_user);
 $stmt_user->bind_param('s', $username);
 $stmt_user->execute();
-$result_user = $stmt_user->get_result();
-$user = $result_user->fetch_assoc();
+$stmt_user->bind_result($nama_user, $no_hp_user);
+$stmt_user->fetch();
+$stmt_user->close();
 
 // Mendapatkan id_driver dari request atau default              
 $id_driver = isset($_GET['id_driver']) ? $_GET['id_driver'] : 1;
 
 // Query untuk mendapatkan data driver berdasarkan id_driver              
-$query_driver = "SELECT nama AS driver_nama, no_sim, kendaraan, plat_nomor FROM driver WHERE id_driver = ?";
+$query_driver = "SELECT nama, no_sim, kendaraan, plat_nomor, no_whatsapp FROM driver WHERE id_driver = ?";
 $stmt_driver = $koneksi->prepare($query_driver);
 $stmt_driver->bind_param('i', $id_driver);
 $stmt_driver->execute();
-$result_driver = $stmt_driver->get_result();
-
-// Ambil data driver jika ditemukan              
-$driver = $result_driver->fetch_assoc();
-
-// Tutup statement          
-$stmt_user->close();
+$stmt_driver->bind_result($driver_nama, $no_sim, $kendaraan, $plat_nomor, $no_whatsapp);
+$driver_exists = $stmt_driver->fetch();
 $stmt_driver->close();
 
 // Tutup koneksi database          
@@ -100,22 +96,26 @@ $koneksi->close();
                 <div class="card">
                     <div class="card-body">
                         <h2 class="text-center mb-4">Detail Driver</h2>
-                        <?php if ($driver): ?>
+                        <?php if ($driver_exists): ?>
                             <div class="mb-3">
                                 <label class="form-label">Nama Driver</label>
-                                <input type="text" class="form-control" value="<?= htmlspecialchars($driver['driver_nama']) ?>" readonly>
+                                <input type="text" class="form-control" value="<?= htmlspecialchars($driver_nama) ?>" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">WhatsApp</label>
+                                <input type="text" class="form-control" value="<?= htmlspecialchars($no_whatsapp) ?>" readonly>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">No SIM</label>
-                                <input type="text" class="form-control" value="<?= htmlspecialchars($driver['no_sim']) ?>" readonly>
+                                <input type="text" class="form-control" value="<?= htmlspecialchars($no_sim) ?>" readonly>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Plat Nomor</label>
-                                <input type="text" class="form-control" value="<?= htmlspecialchars($driver['plat_nomor']) ?>" readonly>
+                                <input type="text" class="form-control" value="<?= htmlspecialchars($plat_nomor) ?>" readonly>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Kendaraan</label>
-                                <input type="text" class="form-control" value="<?= htmlspecialchars($driver['kendaraan']) ?>" readonly>
+                                <input type="text" class="form-control" value="<?= htmlspecialchars($kendaraan) ?>" readonly>
                             </div>
                         <?php else: ?>
                             <div class="alert alert-danger">Data driver tidak ditemukan.</div>
@@ -133,7 +133,11 @@ $koneksi->close();
                             <input type="hidden" name="id_driver" value="<?php echo $id_driver; ?>">
                             <div class="mb-3">
                                 <label for="user_name" class="form-label">Nama User</label>
-                                <input type="text" name="user_name" class="form-control" value="<?php echo htmlspecialchars($user['nama']); ?>" readonly>
+                                <input type="text" name="user_name" class="form-control" value="<?php echo htmlspecialchars($nama_user); ?>" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="no_hp" class="form-label">Nomor Handphone</label>
+                                <input type="tel" name="no_hp" class="form-control" value="<?php echo htmlspecialchars($no_hp_user); ?>" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="titik_antar" class="form-label">Titik Antar</label>

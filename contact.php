@@ -1,16 +1,4 @@
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Hubungi Kami</h4>
-                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Contact</li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
 
         <!-- Contact Start -->
         <div class="container-fluid contact py-5">
@@ -51,7 +39,7 @@
                                     </div>
                                     <div>
                                         <h4>Telephone</h4>
-                                        <p class="mb-0">(+012) 3456 7890</p>
+                                        <p class="mb-0">(+62)81292690095 </p>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +50,7 @@
                                     </div>
                                     <div>
                                         <h4>website</h4>
-                                        <p class="mb-0">CarterULBI.com</p>
+                                        <p class="mb-0">http://mesindigital.xyz/carterulbi/</p>
                                     </div>
                                 </div>
                             </div>

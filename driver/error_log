@@ -1,0 +1,516 @@
+[07-Feb-2025 07:30:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[07-Feb-2025 07:36:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[07-Feb-2025 07:36:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pembayaran_pesananmakanan.php:40
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(190): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pembayaran_pesananmakanan.php on line 40
+[07-Feb-2025 07:39:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[07-Feb-2025 07:44:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/mesindig/public_html/carterulbi/driver/profile.php:18
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(178): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/profile.php on line 18
+[07-Feb-2025 07:44:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/mesindig/public_html/carterulbi/driver/ulasan.php:29
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(192): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/ulasan.php on line 29
+[07-Feb-2025 07:46:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/mesindig/public_html/carterulbi/driver/profile.php:18
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(178): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/profile.php on line 18
+[07-Feb-2025 07:52:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/mesindig/public_html/carterulbi/driver/editprofile.php:18
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(180): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/editprofile.php on line 18
+[12-Feb-2025 07:40:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[12-Feb-2025 07:42:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[12-Feb-2025 07:42:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[12-Feb-2025 07:43:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[12-Feb-2025 14:17:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:101
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 101
+[12-Feb-2025 16:15:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php:102
+Stack trace:
+#0 /home/mesindig/public_html/carterulbi/driver/utama.php(184): include()
+#1 {main}
+  thrown in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 102
+[13-Feb-2025 00:58:07 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:02:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:02:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:36:50 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:49:26 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:57:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:57:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:59:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:59:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:59:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 01:59:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 02:02:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 02:02:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 02:05:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:05:48 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:08:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:08:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:10:24 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 02:10:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:13:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:13:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:14:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasan.php on line 2
+[13-Feb-2025 02:14:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasan.php on line 2
+[13-Feb-2025 02:23:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:23:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:24:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:25:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:26:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:26:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:26:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:26:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:27:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:27:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:27:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:28:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:28:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:33:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:33:33 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:33:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:33:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:33:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:33:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:34:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:34:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:34:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:34:50 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:35:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:35:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[13-Feb-2025 02:37:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/index.php on line 6
+[13-Feb-2025 02:46:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/index.php on line 6
+[13-Feb-2025 02:46:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[13-Feb-2025 02:47:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[13-Feb-2025 02:48:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[13-Feb-2025 02:48:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[13-Feb-2025 02:48:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[13-Feb-2025 02:56:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[13-Feb-2025 02:57:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[13-Feb-2025 03:00:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 05:14:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 05:16:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 05:23:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 05:24:07 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 05:24:30 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 05:56:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 06:00:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 06:00:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 06:00:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 06:03:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 06:04:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 06:06:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[13-Feb-2025 06:06:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:16:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:16:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:16:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:16:26 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:16:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:16:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:17:34 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:17:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:17:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[14-Feb-2025 03:21:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:22:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:22:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:22:24 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:22:34 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:22:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:23:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[14-Feb-2025 03:23:07 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 07:03:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 07:03:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[15-Feb-2025 07:18:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 07:21:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 07:22:51 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 07:25:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 07:25:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 07:25:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/profile.php on line 2
+[15-Feb-2025 07:26:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 07:26:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 07:26:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 07:34:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:34:59 UTC] PHP Notice:  Undefined index: id_pengantaran in /home/mesindig/public_html/carterulbi/driver/status_pembayaranorang.php on line 11
+[15-Feb-2025 07:34:59 UTC] PHP Notice:  Undefined index: status_pembayaran in /home/mesindig/public_html/carterulbi/driver/status_pembayaranorang.php on line 12
+[15-Feb-2025 07:35:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:35:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:35:30 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:38:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:39:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:40:09 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 07:40:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:40:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:43:32 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:48:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 07:48:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:48:51 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 07:48:54 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 07:49:33 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 07:49:35 UTC] PHP Notice:  Undefined variable: _SESSION in /home/mesindig/public_html/carterulbi/driver/dashboard.php on line 6
+[15-Feb-2025 07:49:48 UTC] PHP Notice:  Undefined variable: _SESSION in /home/mesindig/public_html/carterulbi/driver/dashboard.php on line 6
+[15-Feb-2025 07:49:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 07:49:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:50:04 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 07:50:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 12:02:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/profile.php on line 2
+[15-Feb-2025 12:02:56 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/editprofile.php on line 3
+[15-Feb-2025 12:04:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 16:19:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:19:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:19:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:20:13 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:20:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:20:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:20:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:20:54 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:23:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:23:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:23:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 16:23:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:24:09 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:24:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:25:21 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:25:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:30:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:31:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:31:09 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:31:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:31:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:35:12 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:35:12 UTC] PHP Notice:  Undefined variable: stmt in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 96
+[15-Feb-2025 16:35:12 UTC] PHP Warning:  mysqli_stmt_fetch() expects parameter 1 to be mysqli_stmt, null given in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 96
+[15-Feb-2025 16:35:12 UTC] PHP Notice:  Undefined variable: stmt in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 213
+[15-Feb-2025 16:35:12 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, null given in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 213
+[15-Feb-2025 16:35:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 16:35:24 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:35:24 UTC] PHP Notice:  Undefined variable: stmt in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 96
+[15-Feb-2025 16:35:24 UTC] PHP Warning:  mysqli_stmt_fetch() expects parameter 1 to be mysqli_stmt, null given in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 96
+[15-Feb-2025 16:35:24 UTC] PHP Notice:  Undefined variable: stmt in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 213
+[15-Feb-2025 16:35:24 UTC] PHP Warning:  mysqli_stmt_close() expects parameter 1 to be mysqli_stmt, null given in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 213
+[15-Feb-2025 16:35:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:35:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:36:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:36:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:36:16 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:36:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:36:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[15-Feb-2025 16:37:04 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 16:37:09 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 16:37:15 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 16:37:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 16:37:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[15-Feb-2025 16:37:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[15-Feb-2025 16:51:33 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 16:51:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 16:51:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 16:51:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:52:40 UTC] PHP Notice:  Undefined variable: _SESSION in /home/mesindig/public_html/carterulbi/driver/dashboard.php on line 6
+[15-Feb-2025 16:52:47 UTC] PHP Notice:  Undefined variable: _SESSION in /home/mesindig/public_html/carterulbi/driver/dashboard.php on line 6
+[15-Feb-2025 16:52:54 UTC] PHP Notice:  Undefined variable: _SESSION in /home/mesindig/public_html/carterulbi/driver/dashboard.php on line 6
+[15-Feb-2025 16:53:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 16:53:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/profile.php on line 2
+[15-Feb-2025 16:53:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/editprofile.php on line 3
+[15-Feb-2025 16:53:34 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/editprofile.php on line 3
+[15-Feb-2025 16:53:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/profile.php on line 2
+[15-Feb-2025 16:53:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/editprofile.php on line 3
+[15-Feb-2025 16:53:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 17:16:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 17:16:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[15-Feb-2025 17:16:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[15-Feb-2025 17:17:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 17:17:26 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 17:17:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 17:18:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 17:18:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[15-Feb-2025 17:18:26 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[15-Feb-2025 17:18:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[15-Feb-2025 19:24:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 19:25:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 19:25:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[15-Feb-2025 19:25:21 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[16-Feb-2025 02:07:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[16-Feb-2025 02:08:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[16-Feb-2025 02:10:13 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[16-Feb-2025 02:10:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[16-Feb-2025 02:10:21 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:22:33 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/profile.php on line 2
+[17-Feb-2025 08:22:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[17-Feb-2025 08:23:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:24:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:24:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:24:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:24:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:24:34 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:24:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:25:19 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:25:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[17-Feb-2025 08:25:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[17-Feb-2025 08:26:56 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[17-Feb-2025 08:27:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[17-Feb-2025 08:28:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[17-Feb-2025 08:28:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[17-Feb-2025 08:28:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[17-Feb-2025 08:28:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[17-Feb-2025 08:29:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpengantaran.php on line 2
+[17-Feb-2025 08:31:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[22-Feb-2025 13:51:48 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[22-Feb-2025 13:51:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[22-Feb-2025 13:52:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[22-Feb-2025 13:52:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[22-Feb-2025 13:52:21 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[22-Feb-2025 13:52:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[22-Feb-2025 13:52:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[22-Feb-2025 13:52:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[22-Feb-2025 13:53:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:53:30 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:53:32 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:53:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:53:48 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:54:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:54:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:54:24 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:54:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:54:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:54:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[22-Feb-2025 13:54:54 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/ulasanpesanan.php on line 2
+[23-Feb-2025 14:07:26 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[23-Feb-2025 14:07:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:07:32 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:07:34 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:14:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 3
+[23-Feb-2025 14:15:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 3
+[23-Feb-2025 14:15:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:17:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:24:07 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:24:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:24:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:24:33 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:29:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:29:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:29:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:29:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:30:09 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:30:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:30:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:30:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:30:53 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:30:56 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:37:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:38:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:39:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:53:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:53:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:53:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:55:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:55:32 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:56:47 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:57:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:57:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:58:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:58:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 14:58:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[23-Feb-2025 14:58:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:01:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:02:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:02:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:03:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:03:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:04:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:06:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:06:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:06:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:07:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:07:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:07:53 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:28:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:36:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:36:41 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:36:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:40:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:41:06 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:41:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:41:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:42:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:46:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:46:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:47:12 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:47:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:47:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:53:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:54:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:54:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:54:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:55:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:56:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:57:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:57:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:58:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:58:16 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:58:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 15:58:49 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:04:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:05:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:14:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[23-Feb-2025 16:14:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:15:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:15:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:25:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:26:12 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:26:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:26:41 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:27:17 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:28:18 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:33:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:33:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:33:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:45:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:46:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:46:16 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:46:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:47:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:47:49 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:48:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:48:12 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:48:12 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:48:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:49:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:49:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:49:44 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:49:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:49:53 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:49:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:49:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:50:43 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:50:50 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:50:50 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:51:51 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:52:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:52:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:53:49 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:53:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:53:56 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:53:59 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:54:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:54:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:55:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[23-Feb-2025 16:55:26 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:55:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:59:34 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 16:59:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:01:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:01:53 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:02:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:02:15 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:02:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[23-Feb-2025 17:02:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[23-Feb-2025 17:02:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:15:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:16:04 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:16:27 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[23-Feb-2025 17:16:30 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:16:48 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:17:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:24:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:24:00 UTC] PHP Notice:  Undefined variable: bukti_pengiriman_link in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 282
+[23-Feb-2025 17:24:00 UTC] PHP Notice:  Undefined variable: is_selesai in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 287
+[23-Feb-2025 17:25:14 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:32:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:32:25 UTC] PHP Notice:  Undefined index: image_data in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 39
+[23-Feb-2025 17:32:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:32:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:33:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:33:15 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:33:20 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:36:51 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:36:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:37:09 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:39:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:40:07 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:40:37 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:40:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:40:53 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:41:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:42:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:43:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:43:16 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:43:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:43:28 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:43:52 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[23-Feb-2025 17:43:53 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[23-Feb-2025 17:44:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[23-Feb-2025 17:44:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[23-Feb-2025 17:44:11 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[23-Feb-2025 17:44:15 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_orang.php on line 2
+[23-Feb-2025 17:44:19 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[23-Feb-2025 17:44:26 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[23-Feb-2025 17:44:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:44:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[23-Feb-2025 17:44:42 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:44:51 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pembayaran_makanan.php on line 2
+[23-Feb-2025 17:45:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:57:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:57:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:57:36 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:57:45 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 17:58:12 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:22:03 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:22:19 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:26:01 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:26:15 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:39:22 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:39:30 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/profile.php on line 2
+[23-Feb-2025 23:39:33 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:39:51 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:40:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:40:04 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:40:13 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:40:21 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:40:31 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:40:55 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:41:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[23-Feb-2025 23:41:32 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[24-Feb-2025 00:30:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pengantaran_orang.php on line 3
+[24-Feb-2025 00:30:39 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[24-Feb-2025 00:31:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[24-Feb-2025 00:33:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[24-Feb-2025 00:33:23 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[24-Feb-2025 00:38:58 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2
+[24-Feb-2025 00:39:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/mesindig/public_html/carterulbi/driver/pesanan_makanan.php on line 2

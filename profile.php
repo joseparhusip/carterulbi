@@ -3,8 +3,7 @@ include 'config.php';
     
 // Initialize variables            
 $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';            
-$userData = [];            
-$id_user = null; // Initialize id_user      
+$id_user = null;
     
 // Fetch user data based on username            
 if (!empty($username)) {            
@@ -13,9 +12,8 @@ if (!empty($username)) {
     $stmt = $koneksi->prepare($query);            
     $stmt->bind_param("s", $username);            
     $stmt->execute();            
-    $result = $stmt->get_result();            
-    $userRow = $result->fetch_assoc();            
-    $id_user = $userRow['id_user']; // Get the id_user      
+    $stmt->bind_result($id_user);
+    $stmt->fetch();            
     $stmt->close();            
     
     // Now fetch the full user data based on id_user      
@@ -24,8 +22,8 @@ if (!empty($username)) {
         $stmt = $koneksi->prepare($query);            
         $stmt->bind_param("i", $id_user);            
         $stmt->execute();            
-        $result = $stmt->get_result();            
-        $userData = $result->fetch_assoc();            
+        $stmt->bind_result($db_id_user, $db_username, $db_nama, $db_password, $db_email, $db_alamat, $db_no_hp, $db_gambar, $db_tanggal_lahir, $db_provinsi, $db_kota, $db_kabupaten, $db_kecamatan, $db_kode_pos);
+        $stmt->fetch();            
         $stmt->close();            
     }      
 }            
@@ -35,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];            
     $alamat = $_POST['alamat'];            
     $no_hp = $_POST['no_hp'];            
-    $gambar = isset($_FILES['gambar']['name']) ? $_FILES['gambar']['name'] : '';            
     $tanggal_lahir = $_POST['tanggal-lahir'];            
     $provinsi = $_POST['provinsi'];            
     $kota = $_POST['kota'];            
@@ -43,55 +40,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kecamatan = $_POST['kecamatan'];            
     $kode_pos = $_POST['kode_pos'];            
     
+    // Initialize $gambar with existing image
+    $gambar = $db_gambar;
+
     // Handle file upload if a file is selected            
-    if (!empty($gambar)) {            
-        $target_dir = "../profileuser/";            
-        $target_file = $target_dir . basename($gambar);            
-        $uploadOk = 1;            
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));            
-    
-        // Check if file is an actual image            
-        $check = getimagesize($_FILES["gambar"]["tmp_name"]);            
-        if ($check !== false) {            
-            $uploadOk = 1;            
-        } else {            
-            echo "File is not an image.";            
-            $uploadOk = 0;            
-        }            
-            
-        // Check if file already exists            
-        if (file_exists($target_file)) {            
-            echo "Sorry, file already exists.";            
-            $uploadOk = 0;            
-        }            
-            
-        // Check file size            
-        if ($_FILES["gambar"]["size"] > 500000) {            
-            echo "Sorry, your file is too large.";            
-            $uploadOk = 0;            
-        }            
-            
-        // Allow certain file formats            
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"            
-        && $imageFileType != "gif") {            
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";            
-            $uploadOk = 0;            
-        }            
-            
-        // Check if $uploadOk is set to 0 by an error            
-        if ($uploadOk == 0) {            
-            echo "Sorry, your file was not uploaded.";            
-        } else {            
-            if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_file)) {            
-                echo "The file ". htmlspecialchars( basename( $_FILES["gambar"]["name"])). " has been uploaded.";            
-            } else {            
-                echo "Sorry, there was an error uploading your file.";            
-            }            
-        }            
-    } else {            
-        // If no file is uploaded, use the existing image            
-        $gambar = isset($userData['gambar']) ? $userData['gambar'] : '';            
-    }            
+    if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === UPLOAD_ERR_OK) {            
+        $file_tmp = $_FILES['gambar']['tmp_name'];
+        $file_name = $_FILES['gambar']['name'];
+        $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        
+        // Generate unique filename
+        $new_file_name = uniqid() . '.' . $file_ext;
+        $target_dir = "profileuser/";            
+        $target_file = $target_dir . $new_file_name;
+        
+        // Allowed file extensions
+        $allowed_ext = array("jpg", "jpeg", "png", "gif");
+        
+        if (in_array($file_ext, $allowed_ext)) {
+            // Check file size (5MB max)
+            if ($_FILES['gambar']['size'] <= 5000000) {
+                // Remove old file if exists
+                if (!empty($db_gambar) && file_exists($target_dir . $db_gambar)) {
+                    unlink($target_dir . $db_gambar);
+                }
+                
+                // Upload new file
+                if (move_uploaded_file($file_tmp, $target_file)) {
+                    $gambar = $new_file_name;
+                } else {
+                    echo "<script>alert('Gagal mengupload file.');</script>";
+                }
+            } else {
+                echo "<script>alert('Ukuran file terlalu besar. Maksimal 5MB.');</script>";
+            }
+        } else {
+            echo "<script>alert('Format file tidak didukung. Gunakan JPG, JPEG, PNG, atau GIF.');</script>";
+        }
+    }
     
     // Prepare and bind            
     $query = "UPDATE user SET email = ?, alamat = ?, no_hp = ?, gambar = ?, tanggal_lahir = ?, provinsi = ?, kota = ?, kabupaten = ?, kecamatan = ?, kode_pos = ? WHERE id_user = ?";            
@@ -100,9 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     // Execute the statement            
     if ($stmt->execute()) {            
-        echo "Record updated successfully";            
+        echo "<script>alert('Data berhasil diupdate!'); window.location.href=window.location.href;</script>";           
     } else {            
-        echo "Error updating record: " . $stmt->error;            
+        echo "<script>alert('Error updating record: " . $stmt->error . "');</script>";            
     }            
     
     $stmt->close();            
@@ -137,10 +123,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             height: 100px;            
             border-radius: 50%;            
             object-fit: cover;            
+            border: 2px solid #6f8df7;
         }            
     
-        .profile-picture button {            
-            margin-top: 10px;            
+        .profile-picture .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .profile-picture .btn {            
             padding: 10px 20px;            
             border: none;            
             background-color: #6f8df7;            
@@ -149,9 +142,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             cursor: pointer;            
         }            
     
-        .profile-picture button:hover {            
+        .profile-picture .btn:hover {            
             background-color: #5a76d1;            
-        }            
+        }
+
+        .profile-picture .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
     
         .form-group {            
             display: grid;            
@@ -181,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
         @media (max-width: 768px) {            
             .form-group {            
-                grid-template-columns: 1fr; /* Tampil satu kolom pada layar kecil */            
+                grid-template-columns: 1fr;            
             }            
         }            
     </style>            
@@ -189,74 +191,88 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>            
     
 <div class="container1">            
-    <div class="profile-picture">            
-        <img src="<?php echo isset($userData['gambar']) ? 'profileuser/' . $userData['gambar'] : 'https://via.placeholder.com/100'; ?>" alt="Profile Picture">            
-        <button>Tambahkan foto*</button>            
-    </div>            
+    <form method="post" enctype="multipart/form-data">
+        <div class="profile-picture">            
+            <img src="<?php echo isset($db_gambar) && !empty($db_gambar) ? 'profileuser/' . $db_gambar : 'https://via.placeholder.com/100'; ?>" alt="Profile Picture" id="preview-image">
+            <div class="upload-btn-wrapper">
+                <button type="button" class="btn">Tambahkan foto*</button>
+                <input type="file" name="gambar" id="gambar" accept="image/*" onchange="previewImage(this)"/>
+            </div>
+        </div>            
     
-    <form method="post" enctype="multipart/form-data">            
         <div class="form-group">            
             <div>            
                 <label for="id_user">ID User</label>            
-                <input type="text" id="id_user" name="id_user" value="<?php echo isset($userData['id_user']) ? $userData['id_user'] : ''; ?>" readonly>            
+                <input type="text" id="id_user" name="id_user" value="<?php echo $db_id_user ?? ''; ?>" readonly>            
             </div>            
             <div>            
                 <label for="nama">Nama</label>            
-                <input type="text" id="nama" name="nama" value="<?php echo isset($userData['nama']) ? $userData['nama'] : ''; ?>" readonly>            
+                <input type="text" id="nama" name="nama" value="<?php echo $db_nama ?? ''; ?>" readonly>            
             </div>            
             <div>            
                 <label for="username">Username</label>            
-                <input type="text" id="username" name="username" value="<?php echo isset($userData['username']) ? $userData['username'] : ''; ?>" readonly>            
+                <input type="text" id="username" name="username" value="<?php echo $db_username ?? ''; ?>" readonly>            
             </div>            
             <div>            
                 <label for="password">Password</label>            
-                <input type="password" id="password" name="password" value="<?php echo isset($userData['password']) ? $userData['password'] : ''; ?>" readonly>            
+                <input type="password" id="password" name="password" value="<?php echo $db_password ?? ''; ?>" readonly>            
             </div>            
             <div>            
                 <label for="email">Email</label>            
-                <input type="email" id="email" name="email" value="<?php echo isset($userData['email']) ? $userData['email'] : ''; ?>">            
+                <input type="email" id="email" name="email" value="<?php echo $db_email ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="alamat">Alamat</label>            
-                <input type="text" id="alamat" name="alamat" value="<?php echo isset($userData['alamat']) ? $userData['alamat'] : ''; ?>">            
+                <input type="text" id="alamat" name="alamat" value="<?php echo $db_alamat ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="no_hp">No HP</label>            
-                <input type="text" id="no_hp" name="no_hp" value="<?php echo isset($userData['no_hp']) ? $userData['no_hp'] : ''; ?>">            
-            </div>            
-            <div>            
-                <label for="gambar">Gambar</label>            
-                <input type="file" id="gambar" name="gambar">            
+                <input type="text" id="no_hp" name="no_hp" value="<?php echo $db_no_hp ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="tanggal-lahir">Tanggal Lahir</label>            
-                <input type="date" id="tanggal-lahir" name="tanggal-lahir" value="<?php echo isset($userData['tanggal_lahir']) ? $userData['tanggal_lahir'] : ''; ?>">            
+                <input type="date" id="tanggal-lahir" name="tanggal-lahir" value="<?php echo $db_tanggal_lahir ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="provinsi">Provinsi</label>            
-                <input type="text" id="provinsi" name="provinsi" value="<?php echo isset($userData['provinsi']) ? $userData['provinsi'] : ''; ?>">            
+                <input type="text" id="provinsi" name="provinsi" value="<?php echo $db_provinsi ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="kota">Kota</label>            
-                <input type="text" id="kota" name="kota" value="<?php echo isset($userData['kota']) ? $userData['kota'] : ''; ?>">            
+                <input type="text" id="kota" name="kota" value="<?php echo $db_kota ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="kabupaten">Kabupaten</label>            
-                <input type="text" id="kabupaten" name="kabupaten" value="<?php echo isset($userData['kabupaten']) ? $userData['kabupaten'] : ''; ?>">            
+                <input type="text" id="kabupaten" name="kabupaten" value="<?php echo $db_kabupaten ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="kecamatan">Kecamatan</label>            
-                <input type="text" id="kecamatan" name="kecamatan" value="<?php echo isset($userData['kecamatan']) ? $userData['kecamatan'] : ''; ?>">            
+                <input type="text" id="kecamatan" name="kecamatan" value="<?php echo $db_kecamatan ?? ''; ?>">            
             </div>            
             <div>            
                 <label for="kode_pos">Kode Pos</label>            
-                <input type="text" id="kode_pos" name="kode_pos" value="<?php echo isset($userData['kode_pos']) ? $userData['kode_pos'] : ''; ?>">            
+                <input type="text" id="kode_pos" name="kode_pos" value="<?php echo $db_kode_pos ?? ''; ?>">            
             </div>            
             <div>            
-                <button type="submit" name="submit">Simpan</button>            
+                <button type="submit" name="submit" class="btn">Simpan</button>            
             </div>            
         </div>            
     </form>            
-</div>            
+</div>   
+
+<script>
+function previewImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+            document.getElementById('preview-image').src = e.target.result;
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
+         
 </body>            
-</html>  
+</html>

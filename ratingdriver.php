@@ -1,5 +1,5 @@
 <?php
-include 'config.php'; // Koneksi ke database
+include 'config.php';
 
 // Pastikan pengguna sudah login
 date_default_timezone_set('Asia/Jakarta');
@@ -18,81 +18,15 @@ $query = "SELECT d.gambardriver, d.nama, d.plat_nomor, d.kendaraan FROM penganta
 $stmt = $koneksi->prepare($query);
 $stmt->bind_param('i', $id_pengantaran);
 $stmt->execute();
-$result = $stmt->get_result();
-$driver = $result->fetch_assoc();
-if (!$driver) {
+$stmt->bind_result($gambardriver, $nama, $plat_nomor, $kendaraan);
+
+if (!$stmt->fetch()) {
+    $stmt->close();
     echo "<script>alert('Data pengantaran tidak ditemukan.'); window.location = 'utama.php';</script>";
     exit;
 }
+$stmt->close();
 ?>
-
-    <div class="rating-container">  
-        <h1>Rating Driver</h1>  
-        <div class="driver-info">  
-            <img src="gambardriver/<?php echo htmlspecialchars($driver['gambardriver']); ?>" alt="Gambar Driver">  
-            <div class="driver-details">  
-                <p><strong>Nama Driver:</strong> <?php echo htmlspecialchars($driver['nama']); ?></p>  
-                <p><strong>Plat Nomor:</strong> <?php echo htmlspecialchars($driver['plat_nomor']); ?></p>  
-                <p><strong>Kendaraan:</strong> <?php echo htmlspecialchars($driver['kendaraan']); ?></p>  
-            </div>  
-        </div>  
-        <form method="POST" action="">  
-            <div class="star-rating">  
-                <span class="star" data-value="1">&#9733;</span>  
-                <span class="star" data-value="2">&#9733;</span>  
-                <span class="star" data-value="3">&#9733;</span>  
-                <span class="star" data-value="4">&#9733;</span>  
-                <span class="star" data-value="5">&#9733;</span>  
-            </div>  
-            <input type="hidden" name="rating" id="rating" value="0">  
-            <button type="submit" class="submit-button">Berikan Rating</button>  
-        </form>  
-    </div>  
-
-    <script>  
-        const stars = document.querySelectorAll('.star');  
-        const ratingInput = document.getElementById('rating');  
-
-        stars.forEach(star => {  
-            star.addEventListener('click', () => {  
-                const rating = star.getAttribute('data-value');  
-                ratingInput.value = rating;  
-                updateStars(rating);  
-            });  
-        });  
-
-        function updateStars(rating) {  
-            stars.forEach(star => {  
-                star.classList.remove('selected');  
-                if (star.getAttribute('data-value') <= rating) {  
-                    star.classList.add('selected');  
-                }  
-            });  
-        }  
-    </script>  
-
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $rating = isset($_POST['rating']) ? (int)$_POST['rating'] : 0;
-
-    if ($rating > 0) {
-        $query = "UPDATE pengantaran_orang SET rating = ? WHERE id_pengantaran = ?";
-        $stmt = $koneksi->prepare($query);
-        $stmt->bind_param('ii', $rating, $id_pengantaran);
-        if ($stmt->execute()) {
-            echo "<script>alert('Rating berhasil diberikan.'); window.location = 'utama.php?page=detailpengantaranorang&id_pengantaran=$id_pengantaran';</script>";
-        } else {
-            echo "<script>alert('Gagal memberikan rating.');</script>";
-        }
-    } else {
-        echo "<script>alert('Silakan pilih rating terlebih dahulu.');</script>";
-    }
-}
-?>
-
-</body>  
-</html>
-
 
 <!DOCTYPE html>  
 <html lang="id">  
@@ -174,4 +108,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>  
 </head>  
 <body>  
+    <div class="rating-container">  
+        <h1>Rating Driver</h1>  
+        <div class="driver-info">  
+            <img src="gambardriver/<?php echo htmlspecialchars($gambardriver); ?>" alt="Gambar Driver">  
+            <div class="driver-details">  
+                <p><strong>Nama Driver:</strong> <?php echo htmlspecialchars($nama); ?></p>  
+                <p><strong>Plat Nomor:</strong> <?php echo htmlspecialchars($plat_nomor); ?></p>  
+                <p><strong>Kendaraan:</strong> <?php echo htmlspecialchars($kendaraan); ?></p>  
+            </div>  
+        </div>  
+        <form method="POST" action="">  
+            <div class="star-rating">  
+                <span class="star" data-value="1">&#9733;</span>  
+                <span class="star" data-value="2">&#9733;</span>  
+                <span class="star" data-value="3">&#9733;</span>  
+                <span class="star" data-value="4">&#9733;</span>  
+                <span class="star" data-value="5">&#9733;</span>  
+            </div>  
+            <input type="hidden" name="rating" id="rating" value="0">  
+            <button type="submit" class="submit-button">Berikan Rating</button>  
+        </form>  
+    </div>  
 
+    <script>  
+        const stars = document.querySelectorAll('.star');  
+        const ratingInput = document.getElementById('rating');  
+
+        stars.forEach(star => {  
+            star.addEventListener('click', () => {  
+                const rating = star.getAttribute('data-value');  
+                ratingInput.value = rating;  
+                updateStars(rating);  
+            });  
+        });  
+
+        function updateStars(rating) {  
+            stars.forEach(star => {  
+                star.classList.remove('selected');  
+                if (star.getAttribute('data-value') <= rating) {  
+                    star.classList.add('selected');  
+                }  
+            });  
+        }  
+    </script>  
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $rating = isset($_POST['rating']) ? (int)$_POST['rating'] : 0;
+
+    if ($rating > 0) {
+        $update_query = "UPDATE pengantaran_orang SET rating = ? WHERE id_pengantaran = ?";
+        $update_stmt = $koneksi->prepare($update_query);
+        $update_stmt->bind_param('ii', $rating, $id_pengantaran);
+        if ($update_stmt->execute()) {
+            $update_stmt->close();
+            echo "<script>alert('Rating berhasil diberikan.'); window.location = 'utama.php?page=detailpengantaranorang&id_pengantaran=$id_pengantaran';</script>";
+        } else {
+            $update_stmt->close();
+            echo "<script>alert('Gagal memberikan rating.');</script>";
+        }
+    } else {
+        echo "<script>alert('Silakan pilih rating terlebih dahulu.');</script>";
+    }
+}
+?>
+
+</body>  
+</html>

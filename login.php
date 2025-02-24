@@ -1,33 +1,26 @@
 <?php                
-include 'config.php'; // Include the database configuration file                
-session_start(); // Start the session              
-  
-// Check if the form is submitted                
+// PHP code remains the same
+include 'config.php';
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {                
     $username = $_POST['username'];                
     $password = $_POST['password'];                
       
-    // Prepare and execute the SQL statement                
-    $stmt = $koneksi->prepare("SELECT * FROM user WHERE username = ?");                
-    $stmt->bind_param("s", $username); // Bind parameters                
-    $stmt->execute();                
-    $result = $stmt->get_result();                
+    $stmt = $koneksi->prepare("SELECT username, password FROM user WHERE username = ?");                
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($db_username, $db_password);
+    $stmt->fetch();
       
-    // Check if a user was found                
-    if ($result->num_rows > 0) {                
-        $user = $result->fetch_assoc(); // Fetch user data              
-        // Verify the password using MD5              
-        if (md5($password) === $user['password']) {              
-            // Password is correct, set session variable                
-            $_SESSION['username'] = $username;                
-            header("Location: index.php"); // Redirect to index page                
-            exit();                
-        } else {              
-            $error = "Username atau password salah!";                
-        }              
-    } else {                
+    if ($db_username && md5($password) === $db_password) {              
+        $_SESSION['username'] = $username;                
+        header("Location: index.php");               
+        exit();                
+    } else {              
         $error = "Username atau password salah!";                
-    }                
+    }              
+    $stmt->close();
 }                
 ?>                
       
@@ -38,72 +31,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">                          
     <title>Halaman Login</title>                          
     <style>                          
+        /* Original CSS remains the same until media query */
         body, html {                          
             margin: 0;                          
             padding: 0;                          
             height: 100%;                          
             font-family: Arial, sans-serif;                          
-            background-color: #8B0000; /* Mengubah warna latar belakang menjadi merah darah */                          
+            background-color: #8B0000;                         
             display: flex;                          
             justify-content: center;                          
             align-items: center;                          
-            overflow: hidden; /* Mencegah scroll */                          
+            overflow: hidden;                         
         }                          
         .container {                          
             display: flex;                          
-            width: 100%; /* Memperbesar lebar container menjadi 100% */                          
-            height: 100%; /* Memastikan tinggi container 100% */                          
+            width: 100%;                          
+            height: 100%;                         
             background: rgba(255, 255, 255, 0.1);                          
-            border-radius: 20px; /* Memperbesar radius border */                          
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Memperbesar bayangan */                          
-            justify-content: center; /* Menjaga konten di tengah */                          
-            align-items: center; /* Menjaga konten di tengah */                          
+            border-radius: 20px;                         
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);                         
+            justify-content: center;                         
+            align-items: center;                         
         }                          
         .login-form {                          
             flex: 1;                          
-            padding: 30px; /* Mengurangi padding untuk memperbaiki desain */                          
+            padding: 30px;                         
             color: #fff;                          
             display: flex;                          
-            flex-direction: column; /* Mengubah arah flex menjadi vertikal */                          
-            justify-content: center; /* Menengahkan konten secara vertikal */                          
-            max-width: 400px; /* Atur lebar maksimum form */                           
-            position: relative; /* Menjaga posisi relatif */                            
-            z-index: 1; /* Menjaga form di atas */                            
+            flex-direction: column;                         
+            justify-content: center;                         
+            max-width: 400px;                          
+            position: relative;                           
+            z-index: 1;                           
         }                          
         .login-form h2 {                          
-            margin-bottom: 20px; /* Mengurangi margin bawah */                          
-            font-size: 28px; /* Memperbesar ukuran font */                          
-            text-align: center; /* Menengahkan teks */                          
+            margin-bottom: 20px;                         
+            font-size: 28px;                         
+            text-align: center;                         
         }                          
         .login-inputs {                          
-            border: 2px solid #feb47b; /* Menambahkan border di sekitar form dengan warna yang cocok */                          
-            border-radius: 15px; /* Memperbesar radius border */                          
-            padding: 20px; /* Mengurangi padding di dalam border */                          
-            margin-bottom: 20px; /* Mengurangi jarak antara form dan lingkaran */                          
-            background: rgba(255, 255, 255, 0.2); /* Latar belakang form */                          
+            border: 2px solid #feb47b;                         
+            border-radius: 15px;                         
+            padding: 20px;                         
+            margin-bottom: 20px;                         
+            background: rgba(255, 255, 255, 0.2);                         
         }                          
         .login-form input[type="text"],                          
         .login-form input[type="password"] {                          
-            width: 90%; /* Mempersempit lebar input */                          
-            padding: 15px; /* Memperbesar padding */                          
-            margin: 15px 0; /* Memperbesar margin */                          
+            width: 90%;                         
+            padding: 15px;                         
+            margin: 15px 0;                         
             border: none;                          
-            border-radius: 10px; /* Memperbesar radius border */                          
-            background: rgba(255, 255, 255, 0.5); /* Latar belakang input */                          
-            color: #333; /* Warna teks input */                          
-            font-size: 18px; /* Memperbesar ukuran font */                          
+            border-radius: 10px;                         
+            background: rgba(255, 255, 255, 0.5);                         
+            color: #333;                         
+            font-size: 18px;                         
         }                          
         .login-form input[type="submit"] {                          
             width: 100%;                          
-            padding: 20px; /* Memperbesar padding */                          
+            padding: 20px;                         
             border: none;                          
-            border-radius: 10px; /* Memperbesar radius border */                          
+            border-radius: 10px;                         
             background: #ff7e5f;                          
             color: #fff;                          
-            font-size: 20px; /* Memperbesar ukuran font */                          
+            font-size: 20px;                         
             cursor: pointer;                          
-            transition: background 0.3s; /* Efek transisi saat hover */                          
-            margin-top: 15px; /* Menambahkan jarak atas */                          
+            transition: background 0.3s;                         
+            margin-top: 15px;                         
         }                          
         .login-form input[type="submit"]:hover {                          
             background: #feb47b;                          
@@ -113,52 +107,112 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             justify-content: center;                          
             align-items: center;                          
             position: relative;                          
-            padding: 30px; /* Menambahkan padding untuk ilustrasi */                          
-            margin-left: 30px; /* Menambahkan jarak antara form dan lingkaran */                          
+            padding: 30px;                         
+            margin-left: 30px;                         
         }                          
         .circle {                          
-            width: 500px; /* Memperbesar ukuran lingkaran */                          
-            height: 500px; /* Memperbesar ukuran lingkaran */                          
+            width: 500px;                         
+            height: 500px;                         
             border-radius: 50%;                          
-            background: #fff; /* Mengubah warna latar belakang menjadi putih */                          
+            background: #fff;                         
             display: flex;                          
             justify-content: center;                          
             align-items: center;                          
             position: relative;                          
         }                          
         .illustration img {                          
-            width: 1000px; /* Memperbesar ukuran gambar motor */                          
-            max-width: 1000px; /* Memperbesar ukuran maksimum gambar motor */                          
-            position: absolute; /* Memastikan gambar motor berada di tengah lingkaran */                          
+            width: 1000px;                         
+            max-width: 1000px;                         
+            position: absolute;                         
             left: 50%;                          
             top: 50%;                          
-            transform: translate(-50%, -50%); /* Menengahkan gambar motor */                          
+            transform: translate(-50%, -50%);                         
         }                          
         .form-container {                          
             display: flex;                          
             align-items: center;                          
-            flex-direction: column; /* Mengubah arah flex menjadi kolom */                          
+            flex-direction: column;                         
         }                          
         .links {                          
-            display: flex; /* Use flexbox to align links horizontally */                          
-            justify-content: center; /* Center the links */                          
-            margin-top: 10px; /* Mengurangi jarak atas */                          
+            display: flex;                         
+            justify-content: center;                         
+            margin-top: 10px;                         
         }                          
         .links a {                          
-            color: #fff; /* Warna teks link */                          
-            text-decoration: none; /* Menghilangkan garis bawah */                          
-            margin: 0 10px; /* Mengurangi jarak horizontal antara link */                          
-            font-size: 18px; /* Memperbesar ukuran font link */                          
-            padding: 10px 20px; /* Menambahkan padding untuk membuatnya lebih seperti tombol */                          
-            border: 2px solid #feb47b; /* Menambahkan border untuk tampilan tombol */                          
-            border-radius: 10px; /* Memperbesar radius border */                          
-            transition: background 0.3s, color 0.3s; /* Efek transisi saat hover */                          
-            display: inline-block; /* Ensure the link behaves like a block element */                          
-            text-align: center; /* Center the text inside the link */                          
+            color: #fff;                         
+            text-decoration: none;                         
+            margin: 0 10px;                         
+            font-size: 18px;                         
+            padding: 10px 20px;                         
+            border: 2px solid #feb47b;                         
+            border-radius: 10px;                         
+            transition: background 0.3s, color 0.3s;                         
+            display: inline-block;                         
+            text-align: center;                         
         }                          
         .links a:hover {                          
-            background: #feb47b; /* Mengubah latar belakang saat hover */                          
-            color: #fff; /* Mengubah warna teks saat hover */                          
+            background: #feb47b;                         
+            color: #fff;                         
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                justify-content: flex-start;
+                overflow-y: auto;
+                padding: 10px;
+            }
+            
+            .login-form {
+                padding: 15px;
+                max-width: 100%;
+                min-width: 200px;
+            }
+            
+            .illustration {
+                margin-left: 0;
+                padding: 10px;
+            }
+            
+            .circle {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .illustration img {
+                width: 300px;
+            }
+            
+            .links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .links a {
+                width: 100%;
+                margin: 5px 0;
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+            
+            .login-form input[type="text"],
+            .login-form input[type="password"] {
+                font-size: 16px;
+                padding: 12px;
+                width: 85%;
+            }
+            
+            .login-form input[type="submit"] {
+                padding: 12px;
+                font-size: 16px;
+            }
+            
+            .login-form h2 {
+                font-size: 22px;
+            }
+
+            .login-inputs {
+                padding: 15px;
+            }
         }                          
     </style>                          
 </head>                          
@@ -180,7 +234,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <a href="signup.php">Sign Up</a>                          
                     </div>                        
                 </div>                          
-                <?php if (isset($error)) { echo "<p style='color: red; text-align: center;'>$error</p>"; } ?> <!-- Display error message if any -->                
+                <?php if (isset($error)) { echo "<p style='color: red; text-align: center;'>$error</p>"; } ?>
             </form>                          
         </div>                          
         <div class="illustration">                          
@@ -190,4 +244,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>                          
     </div>                          
 </body>                          
-</html>          
+</html>

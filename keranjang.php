@@ -15,19 +15,33 @@ $query_user = "SELECT id_user FROM user WHERE username = ?";
 $stmt_user = $koneksi->prepare($query_user);  
 $stmt_user->bind_param('s', $username);  
 $stmt_user->execute();  
-$result_user = $stmt_user->get_result();  
+$stmt_user->bind_result($id_user);  
 
-if ($result_user->num_rows > 0) {  
-    $user_data = $result_user->fetch_assoc();  
-    $id_user = $user_data['id_user'];  
+if ($stmt_user->fetch()) {  
+    $stmt_user->close();
 
     // Query untuk mendapatkan data keranjang berdasarkan id_user  
     $query_cart = "SELECT id_keranjang, gambar, nama_produk, quantity, harga, total_harga FROM keranjang WHERE id_user = ?";  
     $stmt_cart = $koneksi->prepare($query_cart);  
     $stmt_cart->bind_param('i', $id_user);  
     $stmt_cart->execute();  
-    $result_cart = $stmt_cart->get_result();  
+    $stmt_cart->bind_result($id_keranjang, $gambar, $nama_produk, $quantity, $harga, $total_harga);  
+    
+    // Simpan hasil query dalam array
+    $cart_items = array();
+    while ($stmt_cart->fetch()) {
+        $cart_items[] = array(
+            'id_keranjang' => $id_keranjang,
+            'gambar' => $gambar,
+            'nama_produk' => $nama_produk,
+            'quantity' => $quantity,
+            'harga' => $harga,
+            'total_harga' => $total_harga
+        );
+    }
+    $stmt_cart->close();
 } else {  
+    $stmt_user->close();
     echo "<p>User tidak ditemukan.</p>";  
     exit;  
 }  
@@ -204,7 +218,7 @@ if (isset($_GET['hapus_id'])) {
                     </tr>  
                 </thead>  
                 <tbody>  
-                    <?php while ($row = $result_cart->fetch_assoc()) { ?>  
+                    <?php foreach ($cart_items as $row) { ?>  
                         <tr>  
                             <td><input type="checkbox" class="select-item" name="selected_items[]" value="<?php echo $row['id_keranjang']; ?>" onchange="toggleActionButtons()"></td>  
                             <td><?php echo $row['id_keranjang']; ?></td>  

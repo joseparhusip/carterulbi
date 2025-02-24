@@ -1,8 +1,6 @@
 <?php
-// Include file konfigurasi
+session_start();
 include 'config.php';
-
-// Ambil data dari tabel driver
 $query = "SELECT * FROM driver";
 $result = mysqli_query($koneksi, $query);
 ?>
@@ -30,16 +28,48 @@ $result = mysqli_query($koneksi, $query);
     <link href="./CarterULBI/lib/animate/animate.min.css" rel="stylesheet">
     <link href="./CarterULBI/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-
     <!-- Customized Bootstrap Stylesheet -->
     <link href="./CarterULBI/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="./CarterULBI/css/style.css" rel="stylesheet">
+
+    <!-- Custom CSS for dropdown -->
+    <style>
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-dropdown .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 4px;
+            padding: 8px 0;
+        }
+        .profile-dropdown:hover .dropdown {
+            display: block;
+        }
+        .profile-dropdown .dropdown li {
+            list-style: none;
+        }
+        .profile-dropdown .dropdown li a {
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .profile-dropdown .dropdown li a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 
 <body>
-
     <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
         <div class="container">
@@ -73,28 +103,24 @@ $result = mysqli_query($koneksi, $query);
                             <a href="utama.php?page=keranjang">
                                 <img src="./CarterULBI/logo/cart.jpg" alt="Cart" style="width: 40px; height: 40px;">
                             </a>
+                            <!-- Updated Profile dropdown menu -->
                             <div class="profile-dropdown">
-                                <a href="utama.php?page=profile&id_user=">
+                                <a href="#">
                                     <img src="./CarterULBI/logo/profile.png" alt="Profile" style="width: 40px; height: 40px;">
                                 </a>
-
                                 <ul class="dropdown">
-                                    <?php if (isset($_SESSION['username']) && $_SESSION['username']): ?>
-                                        <!-- Menu untuk pengguna yang sudah login -->
-                                        <li><a href="utama.php?page=profile">Profile (<?= $_SESSION['username'] ?>)</a></li> <!-- Menampilkan username -->
-                                        <li><a href="utama.php?page=orderlist">Order History</a></li>
-                                        <li><a href="utama.php?page=faq">FAQ</a></li>
-                                        <li><a href="logout.php">Log Out</a></li> <!-- Tambahkan opsi untuk logout -->
+                                    <?php if (isset($_SESSION['username'])): ?>
+                                        <li><a href="utama.php?page=profile">Profile</a></li>
+                                        <li><a href="logout.php">Log Out</a></li>
                                     <?php else: ?>
-                                        <!-- Menu untuk pengguna yang belum login -->
                                         <li><a href="login.php">Log In</a></li>
                                         <li><a href="signup.php">Register</a></li>
-                                        <li><a href="logout.php">Log Out</a></li>
                                     <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                </div>
             </nav>
         </div>
     </div>
@@ -110,42 +136,6 @@ $result = mysqli_query($koneksi, $query);
                         <div class="container py-4">
                             <div class="row g-5">
                                 <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
-                                    <div class="bg-secondary rounded p-5">
-                                        <h4 class="text-white mb-4">Search for a destination</h4>
-                                        <form>
-                                            <div class="row g-3">
-                                                <div class="col-12">
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Select Your Car type</option>
-                                                        <option value="1">VW Golf VII</option>
-                                                        <option value="2">Audi A1 S-Line</option>
-                                                        <option value="3">Toyota Camry</option>
-                                                        <option value="4">BMW 320 ModernLine</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="input-group">
-                                                        <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
-                                                            <span class="fas fa-map-marker-alt"></span><span class="ms-1">Pick Up</span>
-                                                        </div>
-                                                        <input class="form-control" type="text" placeholder="Enter a City or Airport" aria-label="Enter a City or Airport">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <a href="#" class="text-start text-white d-block mb-2">Need a different drop-off location?</a>
-                                                    <div class="input-group">
-                                                        <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
-                                                            <span class="fas fa-map-marker-alt"></span><span class="ms-1">Drop off</span>
-                                                        </div>
-                                                        <input class="form-control" type="text" placeholder="Enter a City or Airport" aria-label="Enter a City or Airport">
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <button class="btn btn-light w-100 py-2">Book Now</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
                                 </div>
                                 <div class="col-lg-6 d-none d-lg-flex fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
                                     <div class="text-start">
@@ -161,9 +151,7 @@ $result = mysqli_query($koneksi, $query);
         </div>
     </div>
     <!-- Carousel End -->
-    </br>
-    </br>
-    </br>
+
     <!-- Car categories Start -->
     <div class="container-fluid categories pb-5">
         <div class="container pb-5">
@@ -225,18 +213,12 @@ $result = mysqli_query($koneksi, $query);
     </div>
     <!-- Car categories End -->
 
-    <?php
-    // Tutup koneksi database
-    mysqli_close($koneksi);
-    ?>
-
     <!-- Car Steps Start -->
     <div class="container-fluid steps py-5">
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                 <h1 class="display-5 text-capitalize text-white mb-3">Proses Pemesanan<span class="text-primary"> CaBi</span></h1>
-                <p class="mb-0 text-white">Nikmati kemudahan menggunakan layanan CaBi. Mulai perjalananmu dengan motor yang nyaman dan praktis, hanya dengan beberapa langkah mudah. Kami siap memberikan pengalaman perjalanan terbaik!
-                </p>
+                <p class="mb-0 text-white">Nikmati kemudahan menggunakan layanan CaBi. Mulai perjalananmu dengan motor yang nyaman dan praktis, hanya dengan beberapa langkah mudah. Kami siap memberikan pengalaman perjalanan terbaik!</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -270,8 +252,7 @@ $result = mysqli_query($koneksi, $query);
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                 <h1 class="display-5 text-capitalize mb-3">Layanan <span class="text-primary">CaBi</span></h1>
-                <p class="mb-0">Nikmati berbagai layanan pengantaran cepat dan praktis hanya dengan CaBi, solusi transportasi terbaik untuk semua kebutuhanmu!
-                </p>
+                <p class="mb-0">Nikmati berbagai layanan pengantaran cepat dan praktis hanya dengan CaBi, solusi transportasi terbaik untuk semua kebutuhanmu!</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -371,10 +352,14 @@ $result = mysqli_query($koneksi, $query);
     </div>
     <!-- Copyright End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
+    <!--Start of Tawk.to Script-->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="irnllxmO_Mi0nLrG9euqC";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    <!--End of Tawk.to Script-->
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -384,7 +369,6 @@ $result = mysqli_query($koneksi, $query);
     <script src="./CarterULBI/lib/waypoints/waypoints.min.js"></script>
     <script src="./CarterULBI/lib/counterup/counterup.min.js"></script>
     <script src="./CarterULBI/lib/owlcarousel/owl.carousel.min.js"></script>
-
 
     <!-- Template Javascript -->
     <script src="./CarterULBI/js/main.js"></script>

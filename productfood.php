@@ -1,13 +1,11 @@
 <?php                  
-include 'config.php'; // Mengimpor file konfigurasi koneksi database                                                            
+include 'config.php';
                 
-// Cek apakah pengguna sudah login                                                            
 if (!isset($_SESSION['username'])) {                  
-    header('Location: login.php'); // Jika belum login, redirect ke halaman login                                                            
+    header('Location: login.php');                   
     exit();                  
 }                  
                 
-// Ambil id_kategori dari URL jika ada                      
 $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;                  
 ?>                  
                 
@@ -19,7 +17,7 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
     <title>Produk Makanan</title>                  
     <style>                  
         :root {  
-            --bs-dark: #343a40; /* Define the dark color variable */  
+            --bs-dark: #343a40;
         }  
   
         body {                  
@@ -36,56 +34,56 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
             border-radius: 10px;                  
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);                  
             display: flex;                  
-            justify-content: center; /* Center the content horizontally */                  
+            justify-content: center;                  
             align-items: center;                  
-            flex-direction: column; /* Stack items vertically */                  
+            flex-direction: column;                  
         }                  
                 
         .search-box {                  
             display: flex;                  
             align-items: center;                  
-            width: 100%; /* Full width for the search box */                  
-            max-width: 600px; /* Limit the maximum width */                  
-            margin: 20px 0; /* Add some margin */                  
+            width: 100%;                  
+            max-width: 600px;                  
+            margin: 20px 0;                  
             border-radius: 5px;                  
-            overflow: hidden; /* Ensure the border radius is applied */                  
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */                  
-            transition: box-shadow 0.3s ease; /* Smooth shadow transition */                  
+            overflow: hidden;                  
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);                  
+            transition: box-shadow 0.3s ease;                  
         }                  
                 
         .search-box:hover {                  
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */                  
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);                  
         }                  
                 
         .search-box input {                  
             padding: 10px;                  
-            border: none; /* Remove default border */                  
-            flex: 1; /* Allow input to take available space */                  
-            font-size: 16px; /* Increase font size */                  
-            border-radius: 5px 0 0 5px; /* Rounded corners on the left */                  
-            outline: none; /* Remove outline on focus */                  
-            transition: background-color 0.3s ease; /* Smooth background transition */                  
-            background-color: var(--bs-dark); /* Set background color to var(--bs-dark) */                  
-            color: white; /* Set text color to white for contrast */                  
+            border: none;                  
+            flex: 1;                  
+            font-size: 16px;                  
+            border-radius: 5px 0 0 5px;                  
+            outline: none;                  
+            transition: background-color 0.3s ease;                  
+            background-color: var(--bs-dark);                  
+            color: white;                  
         }                  
                 
         .search-box input:focus {                  
-            background-color: #495057; /* Lighten background on focus */                  
+            background-color: #495057;                  
         }                  
                 
         .search-box button {                  
             padding: 10px 15px;                  
-            background-color: var(--bs-dark); /* Button color */                  
+            background-color: var(--bs-dark);                  
             color: white;                  
             border: none;                  
             cursor: pointer;                  
-            transition: background-color 0.3s, transform 0.2s; /* Smooth color and transform transition */                  
-            border-radius: 0 5px 5px 0; /* Rounded corners on the right */                  
+            transition: background-color 0.3s, transform 0.2s;                  
+            border-radius: 0 5px 5px 0;                  
         }                  
                 
         .search-box button:hover {                  
-            background-color: #0056b3; /* Darker color on hover */                  
-            transform: scale(1.05); /* Slightly enlarge button on hover */                  
+            background-color: #0056b3;                  
+            transform: scale(1.05);                  
         }                  
                 
         .category-list {                  
@@ -126,10 +124,10 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
             text-align: center;                  
             transition: transform 0.2s, box-shadow 0.2s;                  
             display: inline-block;                  
-            width: 250px; /* Lebar card disesuaikan */                  
-            height: 450px; /* Tinggi card disesuaikan untuk memberi ruang pada tombol */                  
-            overflow: hidden; /* Mencegah konten meluap */                  
-            position: relative; /* Memungkinkan penempatan tombol di bagian bawah */                  
+            width: 250px;                  
+            height: 450px;                  
+            overflow: hidden;                  
+            position: relative;                  
         }                  
                 
         .card:hover {                  
@@ -138,11 +136,11 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
         }                  
                 
         .card img {                  
-            width: 100%; /* Mengatur lebar gambar 100% dari card */                  
-            height: 200px; /* Mengatur tinggi gambar */                  
-            object-fit: cover; /* Memastikan gambar tidak terdistorsi */                  
+            width: 100%;                  
+            height: 200px;                  
+            object-fit: cover;                  
             border-radius: 10px;                  
-            margin-bottom: 10px; /* Memberikan jarak antara gambar dan teks */                  
+            margin-bottom: 10px;                  
         }                  
                 
         .card h3 {                  
@@ -154,55 +152,65 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
         .card p {                  
             color: #555;                  
             font-size: 0.9em;                  
-            margin: 5px 0; /* Menambahkan margin untuk jarak antar paragraf */                  
-            height: 50px; /* Menetapkan tinggi tetap untuk deskripsi */                  
-            overflow: hidden; /* Mencegah deskripsi meluap */                  
-            text-overflow: ellipsis; /* Menambahkan elipsis jika teks terlalu panjang */                  
+            margin: 5px 0;                  
+            height: 50px;                  
+            overflow: hidden;                  
+            text-overflow: ellipsis;                  
             display: -webkit-box;                  
             -webkit-box-orient: vertical;                  
-            -webkit-line-clamp: 2; /* Membatasi jumlah baris deskripsi */                  
+            -webkit-line-clamp: 2;                  
         }                  
                 
         .btn-detail {                  
-            background-color: var(--bs-dark); /* Warna tombol hitam */                  
+            background-color: var(--bs-dark);                  
             color: white;                  
             border: none;                  
             border-radius: 5px;                  
             padding: 10px 15px;                  
             cursor: pointer;                  
             text-decoration: none;                  
-            margin-top: 10px; /* Mengatur jarak atas tombol */                  
-            display: flex; /* Menggunakan flexbox untuk memusatkan tombol */                  
-            justify-content: center; /* Memusatkan tombol secara horizontal */                  
-            align-items: center; /* Memusatkan tombol secara vertikal */                  
+            margin-top: 10px;                  
+            display: flex;                  
+            justify-content: center;                  
+            align-items: center;                  
             transition: background-color 0.3s;                  
-            width: 100%; /* Mengatur lebar tombol agar memenuhi card */                  
-            box-sizing: border-box; /* Memastikan padding tidak mempengaruhi lebar total */                  
+            width: 100%;                  
+            box-sizing: border-box;                  
         }                  
                 
         .btn-detail:hover {                  
-            background-color: #333333; /* Warna saat hover */                  
-        }                  
+            background-color: #333333;                  
+        }
+
+        .out-of-stock {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 1;
+        }
     </style>                  
 </head>                  
 <body>                  
     <div class="category-container">                  
         <div class="search-box">                  
             <input type="text" id="searchInput" placeholder="Cari Makanan??">                  
-            <button type="button" onclick="fetchProducts(searchInput.value)">Cari</button> <!-- Search button -->                  
+            <button type="button" onclick="fetchProducts(searchInput.value)">Cari</button>                 
         </div>                  
     </div>                  
                 
     <div class="category-list">                  
         <?php                  
-        // Ambil kategori produk                                      
-        echo "<a href='utama.php?page=productfood&id_kategori=0' class='category-item'>Semua</a>"; // Kategori Semua          
+        echo "<a href='utama.php?page=productfood&id_kategori=0' class='category-item'>Semua</a>";
         $sql = "SELECT id_kategori, nama_kategori FROM kategori_produk";                  
         $result = $koneksi->query($sql);                  
                 
         if ($result->num_rows > 0) {                  
             while ($row = $result->fetch_assoc()) {                  
-                // Menambahkan tautan ke kategori berdasarkan id_kategori                                      
                 echo "<a href='utama.php?page=productfood&id_kategori=" . $row['id_kategori'] . "' class='category-item'>" . $row['nama_kategori'] . "</a>";                  
             }                  
         }                  
@@ -211,23 +219,25 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
                 
     <div class="product-container" id="productContainer">                  
         <?php                  
-        // Ambil produk makanan berdasarkan id_kategori                                      
-        if ($id_kategori === 0) { // Jika kategori "Semua" dipilih          
-            $sql = "SELECT id_produk, nama_produk, harga, deskripsi, gambar FROM produk_makanan";                  
+        if ($id_kategori === 0) {
+            $sql = "SELECT id_produk, nama_produk, harga, stok, deskripsi, gambar FROM produk_makanan";                  
         } else {                  
-            $sql = "SELECT id_produk, nama_produk, harga, deskripsi, gambar FROM produk_makanan WHERE id_kategori = $id_kategori"; // Ambil produk berdasarkan kategori                    
+            $sql = "SELECT id_produk, nama_produk, harga, stok, deskripsi, gambar FROM produk_makanan WHERE id_kategori = $id_kategori";                    
         }                  
                 
         $result = $koneksi->query($sql);                  
                 
         if ($result->num_rows > 0) {                  
             while ($row = $result->fetch_assoc()) {                  
-                echo "<div class='card'>";                  
+                echo "<div class='card'>";
+                if ($row['stok'] == 0) {
+                    echo "<div class='out-of-stock'>Out of Stock</div>";
+                }
                 echo "<img src='gambarfood/" . $row['gambar'] . "' alt='" . $row['nama_produk'] . "'>";                  
                 echo "<h3>" . $row['nama_produk'] . "</h3>";                  
                 echo "<p>Harga: Rp" . number_format($row['harga'], 0, ',', '.') . "</p>";                  
                 echo "<p>" . $row['deskripsi'] . "</p>";                  
-                echo "<a href='utama.php?page=detailproduct&id_produk=" . $row['id_produk'] . "' class='btn-detail'>Detail Produk</a>"; // Tombol detail produk                                      
+                echo "<a href='utama.php?page=detailproduct&id_produk=" . $row['id_produk'] . "' class='btn-detail'>Detail Produk</a>";                                     
                 echo "</div>";                  
             }                  
         } else {                  
@@ -242,7 +252,6 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
             if (query.length > 0) {        
                 fetchProducts(query);        
             } else {        
-                // Jika input kosong, tampilkan semua produk        
                 window.location.href = 'utama.php?page=productfood&id_kategori=<?php echo $id_kategori; ?>';        
             }        
         });        
@@ -260,7 +269,15 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
                         products.forEach(function(product) {        
                             var card = document.createElement('div');        
                             card.className = 'card';        
+                            
+                            // Add out of stock label if stock is 0
+                            let outOfStockLabel = '';
+                            if (product.stok == 0) {
+                                outOfStockLabel = '<div class="out-of-stock">Out of Stock</div>';
+                            }
+
                             card.innerHTML = `        
+                                ${outOfStockLabel}
                                 <img src='gambarfood/${product.gambar}' alt='${product.nama_produk}'>        
                                 <h3>${product.nama_produk}</h3>        
                                 <p>Harga: Rp${product.harga.toLocaleString('id-ID')}</p>        
@@ -278,4 +295,4 @@ $id_kategori = isset($_GET['id_kategori']) ? intval($_GET['id_kategori']) : 0;
         }        
     </script>        
 </body>                  
-</html>    
+</html>
